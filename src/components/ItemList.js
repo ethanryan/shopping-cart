@@ -13,16 +13,41 @@ class ItemList extends Component {
         <div>
           {
             this.props.items.map( (item, index) =>
-              <div key={index}>
-                {item.name}
-              </div>
-            )
-          }
-        </div>
-
+            <div key={index}>
+              <ul>
+                <li>
+                  Name:
+                  {item.name}
+                </li>
+                <li>
+                  styleNumber:
+                  {item.styleNumber}
+                </li>
+                <li>
+                  colorSelected:
+                  {item.colorSelected}
+                </li>
+                <li>
+                  sizeSelected:
+                  {item.sizeSelected}
+                </li>
+                <li>
+                  quantity:
+                  {item.quantity}
+                </li>
+                <li>
+                  price:
+                  {item.price}
+                </li>
+              </ul>
+            </div>
+          )
+        }
       </div>
-    );
-  }
+
+    </div>
+  );
+}
 }
 
 export default ItemList;

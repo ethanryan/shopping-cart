@@ -9,11 +9,21 @@ class ShoppingCartContainer extends Component {
       message: 'helloooooo everybody!',
       something: true,
       items: [
+        // {
+        //   name: 'toy',
+        // },
+        // {
+        //   name: 'car',
+        // },
         {
-          name: 'toy',
-        },
-        {
-          name: 'car',
+          name: "COTTON TSHIRT",
+          styleNumber: "3th43thithgih_FIX_THIS",
+          colors: [],
+          colorSelected: "blue",
+          sizes: [],
+          sizeSelected: "S",
+          quantity: 1,
+          price: 11.00
         }
       ]
     }
