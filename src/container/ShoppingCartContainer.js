@@ -24,6 +24,16 @@ class ShoppingCartContainer extends Component {
           sizeSelected: "S",
           quantity: 1,
           price: 11.00
+        },
+        {
+          name: "COTTON TSHIRT",
+          styleNumber: "3th43thithgih_FIX_THIS",
+          colors: [],
+          colorSelected: "blue",
+          sizes: [],
+          sizeSelected: "S",
+          quantity: 1,
+          price: 11.00
         }
       ]
     }

@@ -13,7 +13,7 @@ class ItemList extends Component {
         <div>
           {
             this.props.items.map( (item, index) =>
-            <div key={index}>
+            <div key={index} className="EachItem">
               <ul>
                 <li>
                   Name:
