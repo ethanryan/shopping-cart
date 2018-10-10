@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ItemList from '../components/ItemList';
+
 class ShoppingCartContainer extends Component {
   render() {
     return (
@@ -8,6 +10,9 @@ class ShoppingCartContainer extends Component {
         <p>
           this is the ShoppingCartContainer
         </p>
+
+        <ItemList
+        />
 
       </div>
     );
