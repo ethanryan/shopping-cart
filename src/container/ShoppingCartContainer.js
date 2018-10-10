@@ -8,6 +8,14 @@ class ShoppingCartContainer extends Component {
     this.state = {
       message: 'helloooooo everybody!',
       something: true,
+      items: [
+        {
+          name: 'toy',
+        },
+        {
+          name: 'car',
+        }
+      ]
     }
   }
 
@@ -21,6 +29,7 @@ class ShoppingCartContainer extends Component {
         </p>
 
         <ItemList
+          items={this.state.items}
         />
 
       </div>
