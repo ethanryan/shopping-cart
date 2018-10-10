@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import ShoppingCartContainer from './container/ShoppingCartContainer';
+
 
 class App extends Component {
   render() {
@@ -11,8 +13,8 @@ class App extends Component {
           hello world
         </p>
 
-        {/* <ShoppingCartContainer
-        /> */}
+        <ShoppingCartContainer
+        />
 
       </div>
     );
