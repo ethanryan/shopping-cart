@@ -18,3 +18,7 @@
   border: 2px solid green;
   margin: 20px;
 }
+
+.item-image {
+  height: 200px;
+}

@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 
 import ItemList from '../components/ItemList';
 
+import cottonTshirt from '../components/assets/cotton-tshirt.jpg'
+import blueBlouse from '../components/assets/blue-blouse.jpg'
+import checkedShirt from '../components/assets/checked-pattern-shirt.jpg'
+import pinkShirt from '../components/assets/pink-tshirt.jpg'
+
 class ShoppingCartContainer extends Component {
   constructor() {
     super()
@@ -9,32 +14,54 @@ class ShoppingCartContainer extends Component {
       message: 'helloooooo everybody!',
       something: true,
       items: [
-        // {
-        //   name: 'toy',
-        // },
-        // {
-        //   name: 'car',
-        // },
         {
           name: "COTTON TSHIRT",
-          styleNumber: "3th43thithgih_FIX_THIS",
+          styleNumber: "MS13KT1906",
           colors: [],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "S",
           quantity: 1,
-          price: 11.00
+          priceOriginal: '',
+          price: 11.00,
+          image: cottonTshirt,
         },
         {
-          name: "COTTON TSHIRT",
-          styleNumber: "3th43thithgih_FIX_THIS",
+          name: "PINK GIRLS TEE",
+          styleNumber: "MS13KT1906",
+          colors: [],
+          colorSelected: "pink",
+          sizes: [],
+          sizeSelected: "M",
+          quantity: 2,
+          priceOriginal: '',
+          price: 17.00,
+          image: pinkShirt
+        },
+        {
+          name: "FLOWER PATTERN SHIRT",
+          styleNumber: "MS13KT1906",
           colors: [],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "S",
           quantity: 1,
-          price: 11.00
-        }
+          priceOriginal: 21.00, //show this with a line through it
+          price: 9.00,
+          image: blueBlouse
+        },
+        {
+          name: "CHECK PATTERN TSHIRT",
+          styleNumber: "MS13KT1906",
+          colors: [],
+          colorSelected: "red",
+          sizes: [],
+          sizeSelected: "M",
+          quantity: 1,
+          priceOriginal: '', //show this with a line through it
+          price: 22.00,
+          image: checkedShirt
+        },
       ]
     }
   }
