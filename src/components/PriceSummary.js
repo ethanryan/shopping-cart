@@ -17,12 +17,24 @@ class PriceSummary extends Component {
 
       <div className="price-summary-data-wrapper">
         <ul>
-          <ul>
+          <li>
             ENTER PROMOTION CODE OR GIFT CARD
-          </ul>
-          <ul>two</ul>
-          <ul>three</ul>
-          <ul>four</ul>
+          </li>
+          <li>SUB TOTAL</li>
+          <li>PROMOTION CODE AJ5 APPLIED</li>
+          <li>
+            ESTIMATED SHIPPING*
+            <p>
+              You qualify for free shipping because your order is over $50
+            </p>
+          </li>
+          <li>
+            ESTIMATED TOTAL
+            <p>
+              Tax will be applied during checkout
+            </p>
+          </li>
+
         </ul>
       </div>
 
