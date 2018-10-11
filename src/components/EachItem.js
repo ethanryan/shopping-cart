@@ -33,6 +33,9 @@ class EachItem extends Component {
             <button value={this.props.index} onClick={this.whatAmI}>What Am I, index...?</button>
           </p>
           <p>
+            <button value={this.props.index} onClick={this.props.handleDeleteItem}>DELETE ME</button>
+          </p>
+          <p>
             Style #: {this.props.item.styleNumber}
           </p>
           <p>

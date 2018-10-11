@@ -29,6 +29,7 @@ class ItemList extends Component {
                 key={index}
                 index={index}
                 item={item}
+                handleDeleteItem={this.props.handleDeleteItem}
               />
               )
             }
