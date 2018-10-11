@@ -78,19 +78,15 @@ class ShoppingCartContainer extends Component {
   //   this.setState({people: array});
   // },
 
-  handleDeleteItem(e) {
-    console.warn('handleDeleteItem called...')
-    console.warn('handleDeleteItem called, e is: ', e)
-    console.warn('handleDeleteItem called, e.target.value is: ', e.target.value)
+  handleDeleteItem(event) {
+    // console.warn('handleDeleteItem called, e.target.value is: ', e.target.value)
     var array = [...this.state.items]; // make a separate copy of the array
-    console.log('0. handleDeleteItem - array is: ', array)
-    // var index = array.indexOf(e.target.value)
-    // var index = 0 //testing...
-    var index = e.target.value //testing...
-    console.log('1. handleDeleteItem - index is: ', index)
+    // console.log('0. handleDeleteItem - array is: ', array)
+    var index = event.target.value //testing...
+    // console.log('1. handleDeleteItem - index is: ', index)
     array.splice(index, 1);
-    console.log('2. handleDeleteItem - array.splice(index, 1) called...' )
-    console.log('3. handleDeleteItem - array is now: ', array)
+    // console.log('2. handleDeleteItem - array.splice(index, 1) called...' )
+    // console.log('3. handleDeleteItem - array is now: ', array)
     this.setState({items: array});
   }
 
