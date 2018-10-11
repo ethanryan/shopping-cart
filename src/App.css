@@ -79,3 +79,7 @@
 .item-image {
   height: 200px;
 }
+
+a {
+  cursor: pointer;
+}

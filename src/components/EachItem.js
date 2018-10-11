@@ -27,15 +27,6 @@ class EachItem extends Component {
             </strong>
           </p>
           <p>
-            <button value={this.props.item.name} onClick={this.whatAmI}>What Am I?</button>
-          </p>
-          <p>
-            <button value={this.props.index} onClick={this.whatAmI}>What Am I, index...?</button>
-          </p>
-          <p>
-            <button value={this.props.index} onClick={this.props.handleDeleteItem}>DELETE ME</button>
-          </p>
-          <p>
             Style #: {this.props.item.styleNumber}
           </p>
           <p>
@@ -43,8 +34,8 @@ class EachItem extends Component {
           </p>
 
           <br></br>
-
-          <span id="edit-button">EDIT</span> | <span>X REMOVE</span> | <span>SAVE FOR LATER</span>
+          
+          <span id="edit-button">EDIT</span> | <a value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</a> | <span>SAVE FOR LATER</span>
         </li>
 
           <li>
