@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class EachItem extends Component {
 
   render() {
-    console.log('EachItem this.this.props is: ', this.props)
+    // console.log('EachItem this.this.props is: ', this.props)
     return (
       <div key={this.props.index} className="list-wrapper">
 

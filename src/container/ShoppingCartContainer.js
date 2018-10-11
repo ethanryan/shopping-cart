@@ -16,6 +16,9 @@ class ShoppingCartContainer extends Component {
       something: true,
       items: [
         {
+          name: "delete me!",
+        },
+        {
           name: "COTTON TSHIRT",
           styleNumber: "MS13KT1906",
           colors: [],
@@ -65,10 +68,33 @@ class ShoppingCartContainer extends Component {
         },
       ]
     }
+    this.handleDeleteItem = this.handleDeleteItem.bind(this)
+  }
+
+  // removePeople(e) {
+  //   var array = [...this.state.people]; // make a separate copy of the array
+  //   var index = array.indexOf(e.target.value)
+  //   array.splice(index, 1);
+  //   this.setState({people: array});
+  // },
+
+  handleDeleteItem(e) { //NOTE: this works, it deletes last item in array... need it to delete item clicked....
+    console.warn('handleDeleteItem called...')
+    console.warn('handleDeleteItem called, e is: ', e)
+    console.warn('handleDeleteItem called, e.target.value is: ', e.target.value)
+    var array = [...this.state.items]; // make a separate copy of the array
+    console.log('0. handleDeleteItem - array is: ', array)
+    var index = array.indexOf(e.target.value)
+    console.log('1. handleDeleteItem - index is: ', index)
+    array.splice(index, 1);
+    console.log('2. handleDeleteItem - array.splice(index, 1) called...' )
+    console.log('3. handleDeleteItem - array is now: ', array)
+    this.setState({items: array});
   }
 
   render() {
     console.log('ShoppingCartContainer, this.state is: ', this.state)
+    console.log('ShoppingCartContainer, this.state.items is: ', this.state.items)
     return (
       <div className="ShoppingCartContainer">
 
@@ -82,6 +108,10 @@ class ShoppingCartContainer extends Component {
         <p>
           If the cart is completely empty then we shall again add back the products for you
         </p>
+
+        <button onClick={this.handleDeleteItem}>
+          DELETE ITEM
+        </button>
 
         <ItemList
           items={this.state.items}
