@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class EachItem extends Component {
+
   render() {
     console.log('EachItem this.this.props is: ', this.props)
     return (
@@ -14,26 +15,27 @@ class EachItem extends Component {
 
         <li>
           <p>
-            Name:
-            {this.props.item.name}
+            <strong>
+              {this.props.item.name}
+            </strong>
           </p>
           <p>
-            styleNumber:
-            {this.props.item.styleNumber}
+            Style #: {this.props.item.styleNumber}
           </p>
           <p>
-            colorSelected:
-            {this.props.item.colorSelected}
+            Color: {this.props.item.colorSelected}
           </p>
+
+          <br></br>
+
+          <span id="edit-button">EDIT</span> | <span>X REMOVE</span> | <span>SAVE FOR LATER</span>
         </li>
 
           <li>
-            sizeSelected:
             {this.props.item.sizeSelected}
           </li>
 
           <li>
-            quantity:
             {this.props.item.quantity}
           </li>
 
@@ -43,15 +45,13 @@ class EachItem extends Component {
                 (this.props.item.priceOriginal !== '') ?
                 <strike>
                   <li>
-                    priceOriginal:
-                    {this.props.item.priceOriginal}
+                    ${this.props.item.priceOriginal}
                   </li>
                 </strike>
                 : null
               }
             </div>
-            price:
-            {this.props.item.price}
+            ${this.props.item.price}
           </li>
 
         </div>
