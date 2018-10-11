@@ -75,6 +75,13 @@ class ShoppingCartContainer extends Component {
           this is the ShoppingCartContainer
         </p>
 
+        <h1>
+          YOUR SHOPPING CART
+        </h1>
+        <p>
+          If the cart is completely empty then we shall again add back the products for you
+        </p>
+
         <ItemList
           items={this.state.items}
         />
