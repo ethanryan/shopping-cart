@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ItemList from '../components/ItemList';
+import PriceSummary from '../components/PriceSummary';
 
 import cottonTshirt from '../components/assets/cotton-tshirt.jpg'
 import blueBlouse from '../components/assets/blue-blouse.jpg'
@@ -84,6 +85,11 @@ class ShoppingCartContainer extends Component {
 
         <ItemList
           items={this.state.items}
+        />
+
+        <PriceSummary
+          promoCode={this.state.promoCode}
+          priceTotal={this.state.priceTotal}
         />
 
       </div>
