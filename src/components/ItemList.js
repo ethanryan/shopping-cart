@@ -13,6 +13,15 @@ class ItemList extends Component {
         </p>
 
         <div className="ItemList">
+
+          <div className="list-wrapper" id="list-header">
+            <li>{this.props.items.length} ITEMS</li>
+            <li></li>
+            <li>SIZE</li>
+            <li>QTY</li>
+            <li>PRICE</li>
+          </div>
+
           <ul>
             {
               this.props.items.map( (item, index) =>
