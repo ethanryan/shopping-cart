@@ -31,12 +31,23 @@
 
 
 .price-summary-data-wrapper {
-  background-color: purple;
+  background-color: lavender;
   border: 2px solid blue;
   padding: 0px;
+}
+
+.price-summary-ul {
   display: grid;
+  padding: 0px;
+  margin: 0px;
   grid-template-columns: 50% 50%;
 }
+
+.price-summary-ul li {
+  display: inline;
+  border: 2px dotted purple;
+}
+
 
 .ItemList-ul {
   padding: 0px;
