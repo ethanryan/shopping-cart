@@ -27,6 +27,7 @@ class ItemList extends Component {
               this.props.items.map( (item, index) =>
               <EachItem
                 key={index}
+                index={index}
                 item={item}
               />
               )

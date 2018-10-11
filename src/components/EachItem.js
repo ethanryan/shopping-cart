@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 
 class EachItem extends Component {
 
+  whatAmI(e) {
+    console.log('whatAmI called...')
+    console.log('whatAmI called, e is: ', e)
+    console.log('whatAmI called, e.target.value is: ', e.target.value)
+  }
+
   render() {
     // console.log('EachItem this.this.props is: ', this.props)
+    console.log('EachItem this.this.props.index is: ', this.props.index)
     return (
-      <div key={this.props.index} className="list-wrapper">
+      <div className="list-wrapper">
 
         <li>
           image:
@@ -18,6 +25,12 @@ class EachItem extends Component {
             <strong>
               {this.props.item.name}
             </strong>
+          </p>
+          <p>
+            <button value={this.props.item.name} onClick={this.whatAmI}>What Am I?</button>
+          </p>
+          <p>
+            <button value={this.props.index} onClick={this.whatAmI}>What Am I, index...?</button>
           </p>
           <p>
             Style #: {this.props.item.styleNumber}
