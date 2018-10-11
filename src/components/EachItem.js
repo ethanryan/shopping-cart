@@ -44,9 +44,7 @@ class EachItem extends Component {
               {
                 (this.props.item.priceOriginal !== '') ?
                 <strike>
-                  <li>
                     ${this.props.item.priceOriginal}
-                  </li>
                 </strike>
                 : null
               }
