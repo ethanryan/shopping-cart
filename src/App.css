@@ -13,11 +13,24 @@
   border: 3px solid blue;
 }
 
-.EachItem {
+.list-wrapper {
   background-color: lightyellow;
   border: 2px solid green;
-  margin: 20px;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 25% 35% 10% 10% 20%;
+  /* background-color: purple; */
 }
+
+ul {
+  padding: 0px;
+}
+
+li {
+  display: inline;
+  border: 2px dotted green;
+}
+
 
 .item-image {
   height: 200px;
