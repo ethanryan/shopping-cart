@@ -19,18 +19,51 @@
   padding: 0px;
   display: grid;
   grid-template-columns: 25% 35% 10% 10% 20%;
-  /* background-color: purple; */
 }
 
-ul {
+
+.PriceSummary-grid {
+  background-color: orange;
+  display: grid;
+  grid-template-columns: 30% 70%;
   padding: 0px;
 }
 
-li {
+
+.price-summary-data-wrapper {
+  background-color: purple;
+  border: 2px solid blue;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.ItemList-ul {
+  padding: 0px;
+}
+
+.ItemList-ul li {
+  display: inline;
+  border: 2px dotted green;
+}
+/*
+.PriceSummary-ul {
+  padding: 0px;
+}
+
+.PriceSummary-ul li {
   display: inline;
   border: 2px dotted green;
 }
 
+.PriceSummary-ul {
+  padding: 0px;
+}
+
+.PriceSummary-ul li {
+  display: inline;
+  border: 2px dotted green;
+} */
 
 .item-image {
   height: 200px;

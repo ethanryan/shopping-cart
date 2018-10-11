@@ -1,32 +1,33 @@
 import React, { Component } from 'react';
 
+import ContactInfo from './ContactInfo';
+
 
 class PriceSummary extends Component {
   render() {
     console.log('PriceSummary this.props is: ', this.props)
     return (
-      <div>
+      // <div className="price-summary-list-wrapper">
 
-        <p>
-          this is the PriceSummary
-        </p>
+      // <ul className="PriceSummary-ul">
+      <div className="PriceSummary-grid">
 
-        <div className="PriceSummary">
+      <ContactInfo
+      />
 
-          <div>contact info</div>
-
-          <div>pricing info</div>
-
-          {/* <div className="list-wrapper" id="list-header">
-            <li>{this.props.items.length} ITEMS</li>
-            <li></li>
-            <li>SIZE</li>
-            <li>QTY</li>
-            <li>PRICE</li>
-          </div> */}
-
-        </div>
+      <div className="price-summary-data-wrapper">
+        <ul>
+          <ul>
+            ENTER PROMOTION CODE OR GIFT CARD
+          </ul>
+          <ul>two</ul>
+          <ul>three</ul>
+          <ul>four</ul>
+        </ul>
       </div>
+
+      </div>
+
     );
   }
 }

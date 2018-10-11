@@ -22,7 +22,7 @@ class ItemList extends Component {
             <li>PRICE</li>
           </div>
 
-          <ul>
+          <ul className="ItemList-ul">
             {
               this.props.items.map( (item, index) =>
               <EachItem
