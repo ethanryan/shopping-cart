@@ -25,7 +25,7 @@ class PriceSummary extends Component {
   getFinalPrice() {
     let subtotal = this.getSubtotal()
     let promoCode = this.props.promoCode //need to get this from container...
-    if (promoCode === "AJ5") {
+    if (promoCode.toUpperCase() === "AJ5") {
       promoCode = 2.15
     } else {
       promoCode = 0
@@ -51,7 +51,7 @@ class PriceSummary extends Component {
             ENTER PROMOTION CODE OR GIFT CARD
           </li>
           <li>
-            AJ5 (input field) APPLY (button)
+            {this.props.promoCode.toUpperCase()} -- AJ5 (input field) APPLY (button)
           </li>
 
           <li>
@@ -62,10 +62,10 @@ class PriceSummary extends Component {
           </li>
 
           <li>
-            PROMOTION CODE AJ5 APPLIED (dynamically rendered)
+            PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
           </li>
           <li>
-            $2.15
+            {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
           </li>
 
           <li>

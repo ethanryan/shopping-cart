@@ -17,6 +17,7 @@ class ShoppingCartContainer extends Component {
     this.state = {
       editMode: false,
       editingIndex: null,
+      promoCodeInput: '', //will replace promoCode on submit
       promoCode: 'AJ5', //default in demo
       sizeSelected: '', //for updates
       quantity: '', //for updates
@@ -76,6 +77,24 @@ class ShoppingCartContainer extends Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.toggleEditMode = this.toggleEditMode.bind(this)
+    this.handlePromoChange = this.handlePromoChange.bind(this)
+    this.handlePromoSubmit = this.handlePromoSubmit.bind(this)
+  }
+
+  handlePromoChange(event) {
+    console.log('handlePromoChange - event.target.value: ' + event.target.value);
+    this.setState({
+      promoCodeInput: event.target.value
+    });
+  }
+
+  handlePromoSubmit(event) {
+    // console.log('handlePromoSubmit - event.target.value: ' + event.target.value);
+    alert('A promoCode was submitted: ' + this.state.promoCodeInput);
+    this.setState({
+      promoCode: this.state.promoCodeInput
+    })
+    event.preventDefault();
   }
 
   handleInputChange(event) {
@@ -157,6 +176,16 @@ class ShoppingCartContainer extends Component {
           items={this.state.items}
           toggleEditMode={this.toggleEditMode}
         />
+
+        <div id="promoCodeForm">
+          <form onSubmit={this.handlePromoSubmit}>
+            <label>
+              PromoCode:
+              <input type="text" value={this.state.promoCodeInput} onChange={this.handlePromoChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
 
         <PriceSummary
           items={this.state.items}
