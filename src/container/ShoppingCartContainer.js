@@ -4,6 +4,8 @@ import ItemList from '../components/ItemList';
 import PriceSummary from '../components/PriceSummary';
 import EditForm from '../components/EditForm';
 
+import Modal from '../components/Modal';
+
 import cottonTshirt from '../components/assets/cotton-tshirt.jpg'
 import blueBlouse from '../components/assets/blue-blouse.jpg'
 import checkedShirt from '../components/assets/checked-pattern-shirt.jpg'
@@ -13,6 +15,7 @@ class ShoppingCartContainer extends Component {
   constructor() {
     super()
     this.state = {
+      displayModal: false,
       editMode: false,
       editingIndex: null,
       message: 'helloooooo everybody!',
@@ -84,9 +87,18 @@ class ShoppingCartContainer extends Component {
     this.toggleEditMode = this.toggleEditMode.bind(this)
   }
 
+  showModal = () => {
+    console.log('showModal called ***^*^*^*^*^*^**^^**^*^^*^*^**')
+    this.setState({ displayModal: true });
+  };
+
+  hideModal = () => {
+    this.setState({ displayModal: false });
+  };
+
   handleInputChange(event) {
     console.warn('handleInputChange called, event.target.name is: ', event.target.name)
-    const item = this.state.editingIndex
+    // const item = this.state.editingIndex
     // console.log('0. item is: ', item)
     const target = event.target;
     const value = target.value;
@@ -147,6 +159,15 @@ class ShoppingCartContainer extends Component {
         <h2>
           {this.state.message}
         </h2>
+
+        <h1>React Modal</h1>
+          <Modal show={this.state.displayModal} handleClose={this.hideModal}>
+            <p>Modal</p>
+            <p>Data</p>
+          </Modal>
+          <button type="button" onClick={this.showModal}>
+            open
+          </button>
 
         <p>
           If the cart is completely empty then we shall again add back the products for you
