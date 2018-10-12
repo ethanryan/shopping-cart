@@ -14,9 +14,16 @@ class ShoppingCartContainer extends Component {
     this.state = {
       message: 'helloooooo everybody!',
       something: true,
+      sizeSelected: '', //for updates
+      quanity: '', //for updates
+      colorSelected: '', //for updates
       items: [
         {
-          name: "delete me!",
+          name: "fake thing",
+          colors: ['red', 'green', 'blue'],
+          colorSelected: "blue",
+          quantity: 1,
+          sizeSelected: "S",
         },
         {
           name: "COTTON TSHIRT",
@@ -62,24 +69,56 @@ class ShoppingCartContainer extends Component {
           sizes: [],
           sizeSelected: "M",
           quantity: 1,
-          priceOriginal: '', //show this with a line through it
+          priceOriginal: '',
           price: 22.00,
           image: checkedShirt
         },
       ]
     }
     this.handleDeleteItem = this.handleDeleteItem.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  //NOTE: TESTING
+  handleInputChange(event) {
+    console.warn('handleInputChange called, event.target.name is: ', event.target.name)
+
+    const item = this.state.items[0] //NOTE: for now, testing on first item...
+    console.log('0. item is: ', item)
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    console.log('1. value is: ', value)
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+      // [name]: value
+      // arrayvar: [...this.state.arrayvar, newelement]
+      // items: [...this.state.items, item]
+    });
+  }
+
+  handleSubmit(event) {
+    console.log('handleSubmit called!!!!!!!!!')
+    var itemsArray = [...this.state.items]; // make a separate copy of the itemsArray
+    let index = 0 //NOTE: for now, testing on first item...
+    const item = this.state.items[index]
+    item.colorSelected = this.state.colorSelected
+    item.quantity = this.state.quantity
+    item.sizeSelected = this.state.sizeSelected
+    itemsArray[index] = item
+    this.setState({
+      items: itemsArray
+    })
+    event.preventDefault();
+  }
+  //NOTE: TESTING
+
   handleDeleteItem(event) {
-    // console.warn('handleDeleteItem called, event.target.value is: ', event.target.value)
     var array = [...this.state.items]; // make a separate copy of the array
-    // console.log('0. handleDeleteItem - array is: ', array)
-    var index = event.target.value //testing...
-    // console.log('1. handleDeleteItem - index is: ', index)
+    var index = event.target.value;
     array.splice(index, 1);
-    // console.log('2. handleDeleteItem - array.splice(index, 1) called...' )
-    // console.log('3. handleDeleteItem - array is now: ', array)
     this.setState({items: array});
   }
 
@@ -92,17 +131,55 @@ class ShoppingCartContainer extends Component {
         <h1>
           YOUR SHOPPING CART
         </h1>
+
+        <h2>
+          {this.state.message}
+        </h2>
+
         <p>
           If the cart is completely empty then we shall again add back the products for you
         </p>
 
-        <button onClick={this.handleDeleteItem}>
-          DELETE ITEM
-        </button>
+
+<div>FUCKING AROUNG WITH FORM BELOW....</div>
+
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              updating this.state.items[0], aka: {this.state.items[0].name}
+            </label>
+<br></br>
+
+            <label>
+              Color:
+              <input type="text" name="colorSelected" onChange={this.handleInputChange} />
+            </label>
+    <br></br>
+
+            <label>
+              Size:
+              <input type="text" name="sizeSelected" onChange={this.handleInputChange} />
+            </label>
+    <br></br>
+
+            <label>
+              Quantity:
+              <input type="number" name="quantity" onChange={this.handleInputChange} />
+            </label>
+    <br></br>
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+
+        {/* <button onClick={this.handleEditItem}>
+          EDIT ITEM
+        </button> */}
 
         <ItemList
           items={this.state.items}
           handleDeleteItem={this.handleDeleteItem}
+          handleEditItem={this.handleEditItem}
         />
 
         <PriceSummary

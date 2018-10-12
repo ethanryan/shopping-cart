@@ -16,7 +16,7 @@ class EachItem extends Component {
 
         <li>
           image:
-          <img src={this.props.item.image}
+          <img src={this.props.item.image} alt={`${this.props.item.name}`}
             className="item-image"></img>
         </li>
 
@@ -35,6 +35,8 @@ class EachItem extends Component {
 
           <br></br>
 
+          {/* <button value={this.props.index} onClick={this.props.handleEditItem}>EDIT</button> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
+<div></div> */}
           <span id="edit-button">EDIT</span> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
         </li>
 
