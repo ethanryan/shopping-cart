@@ -152,51 +152,23 @@ class ShoppingCartContainer extends Component {
           If the cart is completely empty then we shall again add back the products for you
         </p>
 
+        <div>FUCKING AROUNG WITH FORM BELOW....</div>
 
-<div>FUCKING AROUNG WITH FORM BELOW....</div>
-
-{this.state.editMode === true ?
-  <EditForm
-    handleSubmit={this.handleSubmit}
-    name={this.state.items[this.state.editingIndex].name}
-    editingIndex={this.state.editingIndex}
-    handleInputChange={this.handleInputChange}
-  />
-//         <div>
-//           <form onSubmit={this.handleSubmit}>
-//             <label>
-//               updating this.state.items[editingIndex], aka: {this.state.items[this.state.editingIndex].name}
-//             </label>
-// <br></br>
-//
-//             <label>
-//               Color:
-//               <input type="text" name="colorSelected" onChange={this.handleInputChange} />
-//             </label>
-//     <br></br>
-//
-//             <label>
-//               Size:
-//               <input type="text" name="sizeSelected" onChange={this.handleInputChange} />
-//             </label>
-//     <br></br>
-//
-//             <label>
-//               Quantity:
-//               <input type="number" name="quantity" onChange={this.handleInputChange} />
-//             </label>
-//     <br></br>
-//
-//             <input type="submit" value="Submit" />
-//           </form>
-//         </div>
-        :
-        <ItemList
-          items={this.state.items}
-          handleDeleteItem={this.handleDeleteItem}
-          toggleEditMode={this.toggleEditMode}
-        />
-      }
+        {
+          this.state.editMode === true ?
+          <EditForm
+            handleSubmit={this.handleSubmit}
+            name={this.state.items[this.state.editingIndex].name}
+            editingIndex={this.state.editingIndex}
+            handleInputChange={this.handleInputChange}
+          />
+          :
+          <ItemList
+            items={this.state.items}
+            handleDeleteItem={this.handleDeleteItem}
+            toggleEditMode={this.toggleEditMode}
+          />
+        }
 
         <PriceSummary
           promoCode={this.state.promoCode}
