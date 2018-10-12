@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ItemList from '../components/ItemList';
 import PriceSummary from '../components/PriceSummary';
 import EditForm from '../components/EditForm';
+import PromoCodeForm from '../components/PromoCodeForm';
 
 import Modal from '../components/Modal';
 
@@ -82,15 +83,12 @@ class ShoppingCartContainer extends Component {
   }
 
   handlePromoChange(event) {
-    console.log('handlePromoChange - event.target.value: ' + event.target.value);
     this.setState({
       promoCodeInput: event.target.value
     });
   }
 
   handlePromoSubmit(event) {
-    // console.log('handlePromoSubmit - event.target.value: ' + event.target.value);
-    alert('A promoCode was submitted: ' + this.state.promoCodeInput);
     this.setState({
       promoCode: this.state.promoCodeInput
     })
@@ -177,15 +175,11 @@ class ShoppingCartContainer extends Component {
           toggleEditMode={this.toggleEditMode}
         />
 
-        <div id="promoCodeForm">
-          <form onSubmit={this.handlePromoSubmit}>
-            <label>
-              PromoCode:
-              <input type="text" value={this.state.promoCodeInput} onChange={this.handlePromoChange} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
+        <PromoCodeForm
+          handlePromoSubmit={this.handlePromoSubmit}
+          promoCodeInput={this.state.promoCodeInput}
+          handlePromoChange={this.handlePromoChange}
+        />
 
         <PriceSummary
           items={this.state.items}
