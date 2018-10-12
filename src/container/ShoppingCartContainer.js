@@ -15,7 +15,7 @@ class ShoppingCartContainer extends Component {
   constructor() {
     super()
     this.state = {
-      displayModal: false,
+      // displayModal: false,
       editMode: false,
       editingIndex: null,
       message: 'helloooooo everybody!',
@@ -87,14 +87,16 @@ class ShoppingCartContainer extends Component {
     this.toggleEditMode = this.toggleEditMode.bind(this)
   }
 
-  showModal = () => {
-    console.log('showModal called ***^*^*^*^*^*^**^^**^*^^*^*^**')
-    this.setState({ displayModal: true });
-  };
-
-  hideModal = () => {
-    this.setState({ displayModal: false });
-  };
+  // showModal = () => {
+  //   console.log('showModal called ***^*^*^*^*^*^**^^**^*^^*^*^**')
+  //   // this.setState({ displayModal: true });
+  //   this.setState({ editMode: true });
+  // };
+  //
+  // hideModal = () => {
+  //   // this.setState({ displayModal: false });
+  //   this.setState({ editMode: false });
+  // };
 
   handleInputChange(event) {
     console.warn('handleInputChange called, event.target.name is: ', event.target.name)
@@ -160,14 +162,26 @@ class ShoppingCartContainer extends Component {
           {this.state.message}
         </h2>
 
-        <h1>React Modal</h1>
-          <Modal show={this.state.displayModal} handleClose={this.hideModal}>
-            <p>Modal</p>
-            <p>Data</p>
+        {/* <h1>React Modal</h1> */}
+          {/* <Modal show={this.state.displayModal} handleClose={this.hideModal}> */}
+          <Modal show={this.state.editMode} handleClose={this.hideModal}>
+            {/* <p>Modal</p>
+            <p>Data</p> */}
+            {
+              this.state.editMode ?
+              <EditForm
+                handleSubmit={this.handleSubmit}
+                name={this.state.items[this.state.editingIndex].name}
+                editingIndex={this.state.editingIndex}
+                handleInputChange={this.handleInputChange}
+              />
+              :
+              null
+            }
           </Modal>
-          <button type="button" onClick={this.showModal}>
+          {/* <button type="button" onClick={this.showModal}>
             open
-          </button>
+          </button> */}
 
         <p>
           If the cart is completely empty then we shall again add back the products for you
@@ -175,7 +189,7 @@ class ShoppingCartContainer extends Component {
 
         <div>FUCKING AROUNG WITH FORM BELOW....</div>
 
-        {
+        {/* {
           this.state.editMode === true ?
           <EditForm
             handleSubmit={this.handleSubmit}
@@ -189,7 +203,13 @@ class ShoppingCartContainer extends Component {
             handleDeleteItem={this.handleDeleteItem}
             toggleEditMode={this.toggleEditMode}
           />
-        }
+        } */}
+
+        <ItemList
+          items={this.state.items}
+          handleDeleteItem={this.handleDeleteItem}
+          toggleEditMode={this.toggleEditMode}
+        />
 
         <PriceSummary
           promoCode={this.state.promoCode}
