@@ -17,6 +17,7 @@ class ShoppingCartContainer extends Component {
     this.state = {
       editMode: false,
       editingIndex: null,
+      promoCode: 'AJ5', //default in demo
       sizeSelected: '', //for updates
       quantity: '', //for updates
       colorSelected: '', //for updates

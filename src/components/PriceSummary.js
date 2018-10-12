@@ -19,7 +19,20 @@ class PriceSummary extends Component {
     //finally, sum up every number to get the total
     console.log('getSubtotal - result is: ', result)
     // this.setState({subTotal: result})
-    return result.toFixed(2)
+    return result
+  }
+
+  getFinalPrice() {
+    let subtotal = this.getSubtotal()
+    let promoCode = this.props.promoCode //need to get this from container...
+    if (promoCode === "AJ5") {
+      promoCode = 2.15
+    } else {
+      promoCode = 0
+    }
+    let shippingCost = 0 //shipping is free in demo...
+    let total = (subtotal - promoCode) + shippingCost
+    return total
   }
 
   render() {
@@ -41,11 +54,19 @@ class PriceSummary extends Component {
             AJ5 (input field) APPLY (button)
           </li>
 
-          <li>SUB TOTAL</li>
-          <li>${this.getSubtotal()}</li>
+          <li>
+            SUB TOTAL
+          </li>
+          <li>
+            ${this.getSubtotal().toFixed(2)}
+          </li>
 
-          <li>PROMOTION CODE AJ5 APPLIED (dynamically rendered)</li>
-          <li>$2.15</li>
+          <li>
+            PROMOTION CODE AJ5 APPLIED (dynamically rendered)
+          </li>
+          <li>
+            $2.15
+          </li>
 
           <li>
             ESTIMATED SHIPPING*
@@ -63,7 +84,9 @@ class PriceSummary extends Component {
               Tax will be applied during checkout
             </p>
           </li>
-          <li>$40.85</li>
+          <li>
+            ${this.getFinalPrice().toFixed(2)}
+          </li>
 
         </ul>
       </div>
