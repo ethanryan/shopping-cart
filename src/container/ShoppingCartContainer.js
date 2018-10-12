@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import ItemList from '../components/ItemList';
 import PriceSummary from '../components/PriceSummary';
+import EditForm from '../components/EditForm';
 
 import cottonTshirt from '../components/assets/cotton-tshirt.jpg'
 import blueBlouse from '../components/assets/blue-blouse.jpg'
@@ -155,34 +156,40 @@ class ShoppingCartContainer extends Component {
 <div>FUCKING AROUNG WITH FORM BELOW....</div>
 
 {this.state.editMode === true ?
-        <div>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              updating this.state.items[editingIndex], aka: {this.state.items[this.state.editingIndex].name}
-            </label>
-<br></br>
-
-            <label>
-              Color:
-              <input type="text" name="colorSelected" onChange={this.handleInputChange} />
-            </label>
-    <br></br>
-
-            <label>
-              Size:
-              <input type="text" name="sizeSelected" onChange={this.handleInputChange} />
-            </label>
-    <br></br>
-
-            <label>
-              Quantity:
-              <input type="number" name="quantity" onChange={this.handleInputChange} />
-            </label>
-    <br></br>
-
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
+  <EditForm
+    handleSubmit={this.handleSubmit}
+    name={this.state.items[this.state.editingIndex].name}
+    editingIndex={this.state.editingIndex}
+    handleInputChange={this.handleInputChange}
+  />
+//         <div>
+//           <form onSubmit={this.handleSubmit}>
+//             <label>
+//               updating this.state.items[editingIndex], aka: {this.state.items[this.state.editingIndex].name}
+//             </label>
+// <br></br>
+//
+//             <label>
+//               Color:
+//               <input type="text" name="colorSelected" onChange={this.handleInputChange} />
+//             </label>
+//     <br></br>
+//
+//             <label>
+//               Size:
+//               <input type="text" name="sizeSelected" onChange={this.handleInputChange} />
+//             </label>
+//     <br></br>
+//
+//             <label>
+//               Quantity:
+//               <input type="number" name="quantity" onChange={this.handleInputChange} />
+//             </label>
+//     <br></br>
+//
+//             <input type="submit" value="Submit" />
+//           </form>
+//         </div>
         :
         <ItemList
           items={this.state.items}
