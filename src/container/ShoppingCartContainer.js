@@ -71,15 +71,8 @@ class ShoppingCartContainer extends Component {
     this.handleDeleteItem = this.handleDeleteItem.bind(this)
   }
 
-  // removePeople(e) {
-  //   var array = [...this.state.people]; // make a separate copy of the array
-  //   var index = array.indexOf(e.target.value)
-  //   array.splice(index, 1);
-  //   this.setState({people: array});
-  // },
-
   handleDeleteItem(event) {
-    // console.warn('handleDeleteItem called, e.target.value is: ', e.target.value)
+    // console.warn('handleDeleteItem called, event.target.value is: ', event.target.value)
     var array = [...this.state.items]; // make a separate copy of the array
     // console.log('0. handleDeleteItem - array is: ', array)
     var index = event.target.value //testing...
@@ -95,10 +88,6 @@ class ShoppingCartContainer extends Component {
     console.log('ShoppingCartContainer, this.state.items is: ', this.state.items)
     return (
       <div className="ShoppingCartContainer">
-
-        <p>
-          this is the ShoppingCartContainer
-        </p>
 
         <h1>
           YOUR SHOPPING CART
