@@ -83,18 +83,13 @@ class ShoppingCartContainer extends Component {
     this.toggleEditMode = this.toggleEditMode.bind(this)
   }
 
-  //NOTE: TESTING
   handleInputChange(event) {
     console.warn('handleInputChange called, event.target.name is: ', event.target.name)
-
-    // const item = this.state.items[0] //NOTE: for now, testing on first item...
     const item = this.state.editingIndex
-    console.log('0. item is: ', item)
+    // console.log('0. item is: ', item)
     const target = event.target;
     const value = target.value;
-    console.log('1. value is: ', value)
     const name = target.name;
-
     this.setState({
       [name]: value
     });
@@ -111,11 +106,11 @@ class ShoppingCartContainer extends Component {
     itemsArray[index] = item
     this.setState({
       items: itemsArray,
-      // editingIndex: null,
+      editingIndex: null,
       editMode: false,
-      // colorSelected: '',
-      // quanity: '',
-      // sizeSelected: '',
+      colorSelected: '',
+      quanity: '',
+      sizeSelected: '',
     })
     event.preventDefault();
   }
