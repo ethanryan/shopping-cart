@@ -12,6 +12,8 @@ class ShoppingCartContainer extends Component {
   constructor() {
     super()
     this.state = {
+      editMode: false,
+      editingIndex: null,
       message: 'helloooooo everybody!',
       something: true,
       sizeSelected: '', //for updates
@@ -78,38 +80,42 @@ class ShoppingCartContainer extends Component {
     this.handleDeleteItem = this.handleDeleteItem.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.toggleEditMode = this.toggleEditMode.bind(this)
   }
 
   //NOTE: TESTING
   handleInputChange(event) {
     console.warn('handleInputChange called, event.target.name is: ', event.target.name)
 
-    const item = this.state.items[0] //NOTE: for now, testing on first item...
+    // const item = this.state.items[0] //NOTE: for now, testing on first item...
+    const item = this.state.editingIndex
     console.log('0. item is: ', item)
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.value;
     console.log('1. value is: ', value)
     const name = target.name;
 
     this.setState({
       [name]: value
-      // [name]: value
-      // arrayvar: [...this.state.arrayvar, newelement]
-      // items: [...this.state.items, item]
     });
   }
 
   handleSubmit(event) {
     console.log('handleSubmit called!!!!!!!!!')
     var itemsArray = [...this.state.items]; // make a separate copy of the itemsArray
-    let index = 0 //NOTE: for now, testing on first item...
+    let index = this.state.editingIndex
     const item = this.state.items[index]
     item.colorSelected = this.state.colorSelected
     item.quantity = this.state.quantity
     item.sizeSelected = this.state.sizeSelected
     itemsArray[index] = item
     this.setState({
-      items: itemsArray
+      items: itemsArray,
+      // editingIndex: null,
+      editMode: false,
+      // colorSelected: '',
+      // quanity: '',
+      // sizeSelected: '',
     })
     event.preventDefault();
   }
@@ -120,6 +126,16 @@ class ShoppingCartContainer extends Component {
     var index = event.target.value;
     array.splice(index, 1);
     this.setState({items: array});
+  }
+
+  toggleEditMode(event) {
+    console.log('toggleEditMode clicked.........')
+    var index = event.target.value;
+    console.log('toggleEditMode, index is: ', index)
+    this.setState(prevState => ({
+      editMode: !prevState.editMode,
+      editingIndex: index
+    }));
   }
 
   render() {
@@ -143,10 +159,11 @@ class ShoppingCartContainer extends Component {
 
 <div>FUCKING AROUNG WITH FORM BELOW....</div>
 
+{this.state.editMode === true ?
         <div>
           <form onSubmit={this.handleSubmit}>
             <label>
-              updating this.state.items[0], aka: {this.state.items[0].name}
+              updating this.state.items[editingIndex], aka: {this.state.items[this.state.editingIndex].name}
             </label>
 <br></br>
 
@@ -171,16 +188,13 @@ class ShoppingCartContainer extends Component {
             <input type="submit" value="Submit" />
           </form>
         </div>
-
-        {/* <button onClick={this.handleEditItem}>
-          EDIT ITEM
-        </button> */}
-
+        :
         <ItemList
           items={this.state.items}
           handleDeleteItem={this.handleDeleteItem}
-          handleEditItem={this.handleEditItem}
+          toggleEditMode={this.toggleEditMode}
         />
+      }
 
         <PriceSummary
           promoCode={this.state.promoCode}

@@ -30,6 +30,7 @@ class ItemList extends Component {
                 index={index}
                 item={item}
                 handleDeleteItem={this.props.handleDeleteItem}
+                toggleEditMode={this.props.toggleEditMode}
               />
               )
             }
