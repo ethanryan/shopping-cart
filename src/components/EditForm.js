@@ -31,10 +31,10 @@ class EditForm extends Component {
             Quantity:
             <input type="number" name="quantity" onChange={this.props.handleInputChange} />
           </label>
-          
+
       <br></br>
 
-          <input type="submit" value="Submit" />
+          <input type="submit" value="EDIT" />
         </form>
       </div>
     );

@@ -13,7 +13,7 @@ class PromoCodeForm extends Component {
               onChange={this.props.handlePromoChange}
             />
           </label>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Apply" />
         </form>
       </div>
     );
