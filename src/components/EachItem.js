@@ -35,12 +35,7 @@ class EachItem extends Component {
 
           <br></br>
 
-          <button value={this.props.index} onClick={this.props.toggleEditMode}>EDIT</button> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
-<div></div>
-
-<br></br>
-
-          <span id="edit-button">EDIT</span> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
+          <button className="unstyled-button" value={this.props.index} onClick={this.props.toggleEditMode}>EDIT</button> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
         </li>
 
           <li>
