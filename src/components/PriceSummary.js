@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import ContactInfo from './ContactInfo';
+import PromoCodeForm from './PromoCodeForm';
+
 
 
 class PriceSummary extends Component {
@@ -51,7 +53,13 @@ class PriceSummary extends Component {
             ENTER PROMOTION CODE OR GIFT CARD
           </li>
           <li>
-            {this.props.promoCode.toUpperCase()} -- AJ5 (input field) APPLY (button)
+            {/* {this.props.promoCode.toUpperCase()} -- AJ5 (input field) APPLY (button) */}
+            <PromoCodeForm
+              handlePromoSubmit={this.props.handlePromoSubmit}
+              promoCode={this.props.promoCode}
+              promoCodeInput={this.props.promoCodeInput}
+              handlePromoChange={this.props.handlePromoChange}
+            />
           </li>
 
           <li>

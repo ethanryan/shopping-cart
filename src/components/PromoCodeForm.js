@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 
-class promoCodeForm extends Component {
+class PromoCodeForm extends Component {
   render() {
-    console.log('promoCodeForm this.props is: ', this.props)
+    console.log('PromoCodeForm this.props is: ', this.props)
     return (
-      <div id="promoCodeForm">
+      <div id="PromoCodeForm">
         <form onSubmit={this.props.handlePromoSubmit}>
           <label>
-            PromoCode:
-            <input type="text" value={this.props.promoCodeInput} onChange={this.props.handlePromoChange} />
+            <input type="text"
+              placeholder={this.props.promoCode.toUpperCase()}
+              value={this.props.promoCodeInput}
+              onChange={this.props.handlePromoChange}
+            />
           </label>
           <input type="submit" value="Submit" />
         </form>
@@ -17,4 +20,4 @@ class promoCodeForm extends Component {
   }
 }
 
-export default promoCodeForm;
+export default PromoCodeForm;

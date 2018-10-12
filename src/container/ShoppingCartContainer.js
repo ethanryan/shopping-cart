@@ -90,7 +90,8 @@ class ShoppingCartContainer extends Component {
 
   handlePromoSubmit(event) {
     this.setState({
-      promoCode: this.state.promoCodeInput
+      promoCode: this.state.promoCodeInput,
+      promoCodeInput: ''
     })
     event.preventDefault();
   }
@@ -175,15 +176,18 @@ class ShoppingCartContainer extends Component {
           toggleEditMode={this.toggleEditMode}
         />
 
-        <PromoCodeForm
+        {/* <PromoCodeForm
           handlePromoSubmit={this.handlePromoSubmit}
           promoCodeInput={this.state.promoCodeInput}
           handlePromoChange={this.handlePromoChange}
-        />
+        /> */}
 
         <PriceSummary
           items={this.state.items}
           promoCode={this.state.promoCode}
+          handlePromoSubmit={this.handlePromoSubmit}
+          promoCodeInput={this.state.promoCodeInput}
+          handlePromoChange={this.handlePromoChange}
         />
 
       </div>
