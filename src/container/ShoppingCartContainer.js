@@ -18,16 +18,9 @@ class ShoppingCartContainer extends Component {
       editMode: false,
       editingIndex: null,
       sizeSelected: '', //for updates
-      quanity: '', //for updates
+      quantity: '', //for updates
       colorSelected: '', //for updates
       items: [
-        {
-          name: "fake thing",
-          colors: ['red', 'green', 'blue'],
-          colorSelected: "blue",
-          quantity: 1,
-          sizeSelected: "S",
-        },
         {
           name: "COTTON TSHIRT",
           styleNumber: "MS13KT1906",
@@ -86,11 +79,8 @@ class ShoppingCartContainer extends Component {
 
   handleInputChange(event) {
     console.warn('handleInputChange called, event.target.name is: ', event.target.name)
-    // const item = this.state.editingIndex
-    // console.log('0. item is: ', item)
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const value = event.target.value;
+    const name = event.target.name;
     this.setState({
       [name]: value
     });
@@ -99,23 +89,22 @@ class ShoppingCartContainer extends Component {
   handleSubmit(event) {
     console.log('handleSubmit called!!!!!!!!!')
     var itemsArray = [...this.state.items]; // make a separate copy of the itemsArray
-    let index = this.state.editingIndex
-    const item = this.state.items[index]
-    item.colorSelected = this.state.colorSelected
-    item.quantity = this.state.quantity
-    item.sizeSelected = this.state.sizeSelected
-    itemsArray[index] = item
+    let index = this.state.editingIndex;
+    const item = this.state.items[index];
+    item.colorSelected = this.state.colorSelected;
+    item.quantity = this.state.quantity;
+    item.sizeSelected = this.state.sizeSelected;
+    itemsArray[index] = item;
     this.setState({
       items: itemsArray,
       editingIndex: null,
       editMode: false,
       colorSelected: '',
-      quanity: '',
+      quantity: '',
       sizeSelected: '',
     })
     event.preventDefault();
   }
-  //NOTE: TESTING
 
   handleDeleteItem(event) {
     var array = [...this.state.items]; // make a separate copy of the array
@@ -144,7 +133,7 @@ class ShoppingCartContainer extends Component {
           YOUR SHOPPING CART
         </h1>
 
-          <Modal show={this.state.editMode} handleClose={this.hideModal}>
+          <Modal show={this.state.editMode}>
             {
               this.state.editMode ?
               <EditForm
@@ -163,14 +152,14 @@ class ShoppingCartContainer extends Component {
         </p>
 
         <ItemList
-          items={this.state.items}
           handleDeleteItem={this.handleDeleteItem}
+          items={this.state.items}
           toggleEditMode={this.toggleEditMode}
         />
 
         <PriceSummary
+          items={this.state.items}
           promoCode={this.state.promoCode}
-          priceTotal={this.state.priceTotal}
         />
 
       </div>

@@ -4,8 +4,27 @@ import ContactInfo from './ContactInfo';
 
 
 class PriceSummary extends Component {
+
+  // componentDidUpdate() {
+  //   this.props.getSubtotal()
+  // }
+
+  getSubtotal() {
+    //for each element in items, multiply the quantity and price
+    let filteredArray = this.props.items.map(object => {
+      return object.quantity * object.price
+    })
+    console.warn('getSubtotal - filteredArray is: ', filteredArray)
+    var result = filteredArray.reduce((a, b) => a + b, 0);
+    //finally, sum up every number to get the total
+    console.log('getSubtotal - result is: ', result)
+    // this.setState({subTotal: result})
+    return result.toFixed(2)
+  }
+
   render() {
     console.log('PriceSummary this.props is: ', this.props)
+    // this.props.getSubtotal()
     return (
       <div className="PriceSummary-grid">
 
@@ -14,7 +33,7 @@ class PriceSummary extends Component {
 
       <div className="price-summary-data-wrapper">
         <ul className="price-summary-ul">
-          
+
           <li>
             ENTER PROMOTION CODE OR GIFT CARD
           </li>
@@ -23,7 +42,7 @@ class PriceSummary extends Component {
           </li>
 
           <li>SUB TOTAL</li>
-          <li>$43.00 (subtotal dynamically rendered)</li>
+          <li>${this.getSubtotal()}</li>
 
           <li>PROMOTION CODE AJ5 APPLIED (dynamically rendered)</li>
           <li>$2.15</li>
