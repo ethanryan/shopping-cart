@@ -15,11 +15,8 @@ class ShoppingCartContainer extends Component {
   constructor() {
     super()
     this.state = {
-      // displayModal: false,
       editMode: false,
       editingIndex: null,
-      message: 'helloooooo everybody!',
-      something: true,
       sizeSelected: '', //for updates
       quanity: '', //for updates
       colorSelected: '', //for updates
@@ -87,17 +84,6 @@ class ShoppingCartContainer extends Component {
     this.toggleEditMode = this.toggleEditMode.bind(this)
   }
 
-  // showModal = () => {
-  //   console.log('showModal called ***^*^*^*^*^*^**^^**^*^^*^*^**')
-  //   // this.setState({ displayModal: true });
-  //   this.setState({ editMode: true });
-  // };
-  //
-  // hideModal = () => {
-  //   // this.setState({ displayModal: false });
-  //   this.setState({ editMode: false });
-  // };
-
   handleInputChange(event) {
     console.warn('handleInputChange called, event.target.name is: ', event.target.name)
     // const item = this.state.editingIndex
@@ -158,15 +144,7 @@ class ShoppingCartContainer extends Component {
           YOUR SHOPPING CART
         </h1>
 
-        <h2>
-          {this.state.message}
-        </h2>
-
-        {/* <h1>React Modal</h1> */}
-          {/* <Modal show={this.state.displayModal} handleClose={this.hideModal}> */}
           <Modal show={this.state.editMode} handleClose={this.hideModal}>
-            {/* <p>Modal</p>
-            <p>Data</p> */}
             {
               this.state.editMode ?
               <EditForm
@@ -179,31 +157,10 @@ class ShoppingCartContainer extends Component {
               null
             }
           </Modal>
-          {/* <button type="button" onClick={this.showModal}>
-            open
-          </button> */}
 
         <p>
           If the cart is completely empty then we shall again add back the products for you
         </p>
-
-        <div>FUCKING AROUNG WITH FORM BELOW....</div>
-
-        {/* {
-          this.state.editMode === true ?
-          <EditForm
-            handleSubmit={this.handleSubmit}
-            name={this.state.items[this.state.editingIndex].name}
-            editingIndex={this.state.editingIndex}
-            handleInputChange={this.handleInputChange}
-          />
-          :
-          <ItemList
-            items={this.state.items}
-            handleDeleteItem={this.handleDeleteItem}
-            toggleEditMode={this.toggleEditMode}
-          />
-        } */}
 
         <ItemList
           items={this.state.items}
