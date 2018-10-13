@@ -25,7 +25,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "COTTON TSHIRT",
           styleNumber: "MS13KT1906",
-          colors: ["red", "white", "blue"],
+          colors: ["red", "white", "blue", "black", "yellow"],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "small",
@@ -37,7 +37,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "PINK GIRLS TEE",
           styleNumber: "MS13KT1906",
-          colors: [],
+          colors: ["green", "yellow", "pink"],
           colorSelected: "pink",
           sizes: [],
           sizeSelected: "medium",
@@ -49,7 +49,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "FLOWER PATTERN SHIRT",
           styleNumber: "MS13KT1906",
-          colors: [],
+          colors: ["beige", "blue", "fuchsia", "indigo", "marigold"],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "small",
@@ -61,7 +61,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "CHECK PATTERN TSHIRT",
           styleNumber: "MS13KT1906",
-          colors: [],
+          colors: ["forrest green", "red", "navy blue"],
           colorSelected: "red",
           sizes: [],
           sizeSelected: "medium",
