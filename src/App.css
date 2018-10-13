@@ -110,7 +110,7 @@ button.unstyled-button {
 }
 
 /* input[type=submit]#edit-button { */
-#edit-button {
+.primary-button {
   background-color: #2185d0;
   color: #fff;
   text-shadow: none;
@@ -146,6 +146,10 @@ button.unstyled-button {
   text-align: right;
 }
 
+.input-field-compact {
+  width: 25px;
+}
+
 .colorRadioButtons {
   padding: 15px;
   /* margin: 10px; */
@@ -173,10 +177,22 @@ button.unstyled-button {
   border-collapse: collapse;
 }
 
-td.pricing-table {
-  padding-bottom: 10em;
-}
-
 .table-bottom-border {
   border-bottom: 2px solid lightgray;
+}
+
+.padding-left {
+  padding-left: 10%;
+}
+
+.margin-left {
+  margin-left: 10%;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  display: inline-block;
 }

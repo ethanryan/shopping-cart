@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 class EditForm extends Component {
   render() {
+    let displayColor = this.props.colorSelected ? this.props.colorSelected : this.props.item.colorSelected
     console.log('EditForm this.props is: ', this.props)
     return (
       <div className="EditForm center-text">
@@ -43,7 +44,11 @@ class EditForm extends Component {
               })
             }
           <p>
-            Color: {this.props.colorSelected ? this.props.colorSelected : this.props.item.colorSelected}
+            Color: {displayColor} <span className="dot"
+              style={{
+                color: `${displayColor}`,
+                backgroundColor: `${displayColor}`
+              }}></span>
           </p>
         </div>
 
@@ -58,9 +63,10 @@ class EditForm extends Component {
               <option value="extra-large">extra-large</option>
             </select>
 
-            <span style={{paddingLeft: `10%`}}>
+            <span className="padding-left">
             Quantity:
             <input type="number"
+              className="align-right input-field-compact"
               name="quantity"
               min="1"
               defaultValue={this.props.item.quantity}
@@ -72,7 +78,7 @@ class EditForm extends Component {
           <br></br>
 
           <p>
-            <input type="submit" value="EDIT" id="edit-button"/>
+            <input type="submit" value="EDIT" className="primary-button"/>
             <br></br>
             <u>
               Check product details

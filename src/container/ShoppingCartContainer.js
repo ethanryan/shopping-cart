@@ -41,7 +41,7 @@ class ShoppingCartContainer extends Component {
           colorSelected: "pink",
           sizes: [],
           sizeSelected: "medium",
-          quantity: 2,
+          quantity: 1,
           priceOriginal: '',
           price: 17.00,
           image: pinkShirt

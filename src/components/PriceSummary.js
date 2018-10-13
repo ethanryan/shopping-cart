@@ -48,21 +48,6 @@ class PriceSummary extends Component {
 
         <tbody>
 
-          {/* <tr>
-            <th>Data 1</th>
-            <th>Data 2</th>
-          </tr>
-
-          <tr>
-            <td>Calcutta</td>
-            <td>Orange</td>
-          </tr>
-
-          <tr>
-            <td>Robots</td>
-            <td>Jazz</td>
-          </tr> */}
-
           <tr>
             <td className="table-bottom-border">
               ENTER PROMOTION CODE OR GIFT CARD
@@ -105,60 +90,40 @@ class PriceSummary extends Component {
             </td>
           </tr>
 
+          <tr>
+            <td>
+              ESTIMATED TOTAL
+              <p>
+                Tax will be applied during checkout
+              </p>
+            </td>
+            <td className="align-right">
+              ${this.getFinalPrice().toFixed(2)}
+            </td>
+          </tr>
+
         </tbody>
       </table>
 
-      {/* <div className="price-summary-data-wrapper">
-        <ul className="price-summary-ul">
+      <hr className="thicker-line"></hr>
 
-          <li>
-            ENTER PROMOTION CODE OR GIFT CARD
-          </li>
-          <li className="align-right">
-            <PromoCodeForm
-              handlePromoSubmit={this.props.handlePromoSubmit}
-              promoCode={this.props.promoCode}
-              promoCodeInput={this.props.promoCodeInput}
-              handlePromoChange={this.props.handlePromoChange}
-            />
-          </li>
+      <div className="align-right">
+        <hr className="very-thick-line"></hr>
 
-          <li>
-            SUB TOTAL
-          </li>
-          <li className="align-right">
-            ${this.getSubtotal().toFixed(2)}
-          </li>
+        <span>
+          <u>
+            CONTINUE SHOPPING
+          </u>
+          <button className="primary-button margin-left">CHECKOUT</button>
+        </span>
 
-          <li>
-            PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
-          </li>
-          <li className="align-right">
-            {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
-          </li>
+        <p>
+          🔒 Secure checkout. Shopping is always safe & secure
+        </p>
 
-          <li>
-            ESTIMATED SHIPPING*
-            <p>
-              You qualify for free shipping because your order is over $50
-            </p>
-          </li>
-          <li className="align-right">
-            FREE
-          </li>
+        <hr className="thicker-line"></hr>
 
-          <li>
-            ESTIMATED TOTAL
-            <p>
-              Tax will be applied during checkout
-            </p>
-          </li>
-          <li className="align-right">
-            ${this.getFinalPrice().toFixed(2)}
-          </li>
-
-        </ul>
-      </div> */}
+      </div>
 
       </div>
     );
