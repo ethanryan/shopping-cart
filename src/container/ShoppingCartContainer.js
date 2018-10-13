@@ -108,10 +108,11 @@ class ShoppingCartContainer extends Component {
     var itemsArray = [...this.state.items]; // make a separate copy of the itemsArray
     let index = this.state.editingIndex;
     const item = this.state.items[index];
-    item.colorSelected = this.state.colorSelected;
-    item.quantity = this.state.quantity;
-    item.sizeSelected = this.state.sizeSelected;
+    item.colorSelected = this.state.colorSelected || item.colorSelected;
+    item.quantity = this.state.quantity || item.quantity;
+    item.sizeSelected = this.state.sizeSelected || item.sizeSelected;
     itemsArray[index] = item;
+    console.log('handleSubmit, item is: ', item)
     this.setState({
       items: itemsArray,
       editingIndex: null,
