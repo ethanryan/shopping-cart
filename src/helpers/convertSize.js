@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function convertSize(size) {
   if (size === "small") {
     return "S"

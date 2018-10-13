@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 class EditForm extends Component {
   render() {
     let displayColor = this.props.colorSelected ? this.props.colorSelected : this.props.item.colorSelected
-    console.log('EditForm this.props is: ', this.props)
     return (
       <div className="EditForm center-text">
 

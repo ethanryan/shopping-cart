@@ -104,7 +104,7 @@ class ShoppingCartContainer extends Component {
   }
 
   handleSubmit(event) {
-    console.log('handleSubmit called!!!!!!!!!')
+    // console.log('handleSubmit called')
     var itemsArray = [...this.state.items]; // make a separate copy of the itemsArray
     let index = this.state.editingIndex;
     const item = this.state.items[index];
@@ -132,9 +132,8 @@ class ShoppingCartContainer extends Component {
   }
 
   toggleEditMode(event) {
-    console.log('toggleEditMode clicked.........')
+    // console.log('toggleEditMode clicked...')
     var index = event.target.value;
-    console.log('toggleEditMode, index is: ', index)
     this.setState(prevState => ({
       editMode: !prevState.editMode,
       editingIndex: index

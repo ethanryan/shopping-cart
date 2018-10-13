@@ -1,3 +1,17 @@
+Shopping Cart demo app, built in ReactJS
+
+To view this app:
+
+fork or clone this repo
+
+run `npm install`
+
+run `npm start`
+
+view app in web browser at `localhost:3000`
+
+---
+
 Shopping Cart
 
 Web development Test:
