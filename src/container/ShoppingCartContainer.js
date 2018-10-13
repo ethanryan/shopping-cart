@@ -157,7 +157,7 @@ class ShoppingCartContainer extends Component {
               this.state.editMode ?
               <EditForm
                 handleSubmit={this.handleSubmit}
-                name={this.state.items[this.state.editingIndex].name}
+                item={this.state.items[this.state.editingIndex]}
                 editingIndex={this.state.editingIndex}
                 handleInputChange={this.handleInputChange}
               />

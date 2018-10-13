@@ -8,28 +8,39 @@ class EditForm extends Component {
         <form onSubmit={this.props.handleSubmit}>
           <label>
             {/* updating this.state.items[editingIndex], aka: {this.state.items[this.state.editingIndex].name} */}
-            updating this.state.items[editingIndex], aka: {this.props.name}
+            updating this.state.items[editingIndex], aka: {this.props.item.name}
           </label>
 
       <br></br>
 
           <label>
             Color:
-            <input type="text" name="colorSelected" onChange={this.props.handleInputChange} />
+            <input type="text"
+              name="colorSelected"
+              onChange={this.props.handleInputChange}
+            />
           </label>
 
       <br></br>
 
           <label>
             Size:
-            <input type="text" name="sizeSelected" onChange={this.props.handleInputChange} />
+            <input type="text"
+              name="sizeSelected"
+              onChange={this.props.handleInputChange}
+            />
           </label>
 
       <br></br>
 
           <label>
             Quantity:
-            <input type="number" name="quantity" onChange={this.props.handleInputChange} />
+            <input type="number"
+              name="quantity"
+              min="1"
+              defaultValue={this.props.item.quantity}
+              onChange={this.props.handleInputChange}
+            />
           </label>
 
       <br></br>
