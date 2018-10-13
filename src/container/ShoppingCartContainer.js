@@ -142,8 +142,7 @@ class ShoppingCartContainer extends Component {
   }
 
   render() {
-    console.warn('ShoppingCartContainer, this.state is: ', this.state)
-    // console.log('ShoppingCartContainer, this.state.items is: ', this.state.items)
+    console.log('ShoppingCartContainer, this.state is: ', this.state)
     return (
       <div className="ShoppingCartContainer">
 

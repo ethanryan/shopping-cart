@@ -6,13 +6,10 @@ import PromoCodeForm from './PromoCodeForm';
 class PriceSummary extends Component {
 
   getSubtotal() {
-    //for each element in items, multiply the quantity and price
     let filteredArray = this.props.items.map(object => {
       return object.quantity * object.price
     })
-    // console.warn('getSubtotal - filteredArray is: ', filteredArray)
     var result = filteredArray.reduce((a, b) => a + b, 0); //sum up every number to get the total
-    // console.log('getSubtotal - result is: ', result)
     return result
   }
 
@@ -35,7 +32,6 @@ class PriceSummary extends Component {
   }
 
   render() {
-    // console.log('PriceSummary this.props is: ', this.props)
     return (
       <div className="PriceSummary-grid">
 
