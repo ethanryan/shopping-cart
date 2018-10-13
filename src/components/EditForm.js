@@ -25,10 +25,19 @@ class EditForm extends Component {
 
           <label>
             Size:
-            <input type="text"
+            {/* <input type="text"
               name="sizeSelected"
+              defaultValue={this.props.item.sizeSelected}
               onChange={this.props.handleInputChange}
-            />
+            /> */}
+            <select name="sizeSelected"
+              defaultValue={this.props.item.sizeSelected}
+              onChange={this.props.handleInputChange}>
+              <option value="small">small</option>
+              <option value="medium">medium</option>
+              <option value="large">large</option>
+              <option value="extra-large">extra-large</option>
+            </select>
           </label>
 
       <br></br>
