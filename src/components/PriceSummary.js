@@ -49,10 +49,10 @@ class PriceSummary extends Component {
         <tbody>
 
           <tr>
-            <td className="table-bottom-border">
+            <td className="table-bottom-border cellPaddingBottom">
               ENTER PROMOTION CODE OR GIFT CARD
             </td>
-            <td className="table-bottom-border">
+            <td className="table-bottom-border cellPaddingBottom">
               <PromoCodeForm
                 handlePromoSubmit={this.props.handlePromoSubmit}
                 promoCode={this.props.promoCode}
@@ -63,41 +63,41 @@ class PriceSummary extends Component {
           </tr>
 
           <tr>
-            <td>
+            <td className="cellPadding">
               SUB TOTAL
             </td>
-            <td className="align-right">
+            <td className="align-right cellPadding">
               ${this.getSubtotal().toFixed(2)}
             </td>
           </tr>
 
           <tr>
-            <td>
+            <td className="cellPadding">
               PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
             </td>
-            <td className="align-right">
+            <td className="align-right cellPadding">
               {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
             </td>
           </tr>
 
           <tr>
-            <td className="table-bottom-border">
+            <td className="table-bottom-border cellPadding">
               ESTIMATED SHIPPING*<br></br>
                 You qualify for free shipping because your order is over $50
             </td>
-            <td className="align-right table-bottom-border">
+            <td className="align-right table-bottom-border cellPadding">
               FREE
             </td>
           </tr>
 
           <tr>
-            <td>
+            <td className="cellPadding">
               ESTIMATED TOTAL
               <p>
                 Tax will be applied during checkout
               </p>
             </td>
-            <td className="align-right">
+            <td className="align-right cellPadding">
               ${this.getFinalPrice().toFixed(2)}
             </td>
           </tr>

@@ -10,9 +10,9 @@
   /* background-color: lightgray; */
   background-color: white;
   padding: 0px 25px 0px 25px;
-  /* padding-left: 20px; */
-  /* padding-right: 20px; */
-  border: 3px solid red;
+  /* border: 3px solid red; */
+  border: 1px solid lightgray;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .ItemList {
@@ -195,4 +195,12 @@ button.unstyled-button {
   border: 1px solid lightgray;
   border-radius: 50%;
   display: inline-block;
+}
+
+.cellPaddingBottom {
+  padding-bottom: 10px;
+}
+
+.cellPadding {
+  padding: 10px 0px 10px 0px;
 }
