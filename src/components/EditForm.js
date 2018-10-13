@@ -84,7 +84,7 @@ class EditForm extends Component {
             form is in column 1, image will go here
           </p>
 
-          <img src={this.props.item.image} alt={`${this.props.item.name}`}></img>
+          <img src={this.props.item.image}></img>
 
         </div>
 
