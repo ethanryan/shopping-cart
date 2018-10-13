@@ -204,3 +204,12 @@ button.unstyled-button {
 .cellPadding {
   padding: 10px 0px 10px 0px;
 }
+
+.dollarSign {
+  vertical-align: super;
+}
+
+.bigMoney {
+  font-size: 26px;
+  font-weight: bold
+}

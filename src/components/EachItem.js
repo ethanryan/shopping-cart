@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import formatMoney from '../helpers/formatMoney';
 
 class EachItem extends Component {
 
@@ -23,7 +24,10 @@ class EachItem extends Component {
       <div className="list-wrapper">
 
         <li className="center">
-          <img src={this.props.item.image} alt={`${this.props.item.name}`} className="item-image"></img>
+          <img
+            src={this.props.item.image}
+            alt={`${this.props.item.name}`}
+            className="item-image"></img>
         </li>
 
         <li>
@@ -41,11 +45,28 @@ class EachItem extends Component {
 
           <br></br>
 
-          <button className="unstyled-button" value={this.props.index} onClick={this.props.toggleEditMode}>EDIT</button> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
+          <button className="unstyled-button"
+            value={this.props.index}
+            onClick={this.props.toggleEditMode}>
+            EDIT
+          </button>
+          {" "}|{" "}
+          <button
+            className="unstyled-button"
+            value={this.props.index}
+            onClick={this.props.handleDeleteItem}>
+            X REMOVE
+          </button>
+           {" "}|{" "}
+           <span>
+             SAVE FOR LATER
+           </span>
         </li>
 
         <li className="center">
-          {this.convertSize(this.props.item.sizeSelected)}
+          <strong>
+            {this.convertSize(this.props.item.sizeSelected)}
+          </strong>
         </li>
 
         <li className="center">
@@ -62,7 +83,7 @@ class EachItem extends Component {
               : null
             }
           </div>
-          ${this.props.item.price}
+          {formatMoney(this.props.item.price)}
         </li>
 
       </div>

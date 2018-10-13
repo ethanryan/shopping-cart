@@ -40,9 +40,8 @@ class EditForm extends Component {
                       {/* {color} */}
                     </label>
                   </span>
-                )
-              })
-            }
+                )})
+              }
           <p>
             Color: {displayColor} <span className="dot"
               style={{

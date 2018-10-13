@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import ContactInfo from './ContactInfo';
 import PromoCodeForm from './PromoCodeForm';
 
+import formatMoney from '../helpers/formatMoney';
+
 class PriceSummary extends Component {
 
   getSubtotal() {
@@ -35,91 +37,92 @@ class PriceSummary extends Component {
     return (
       <div className="PriceSummary-grid">
 
-      <ContactInfo
-      />
+        <ContactInfo
+        />
 
-      <table className="pricing-table">
+        <table className="pricing-table">
 
-        <thead></thead>
+          <tbody>
 
-        <tbody>
+            <tr>
+              <td className="table-bottom-border cellPaddingBottom">
+                ENTER PROMOTION CODE OR GIFT CARD
+              </td>
+              <td className="table-bottom-border cellPaddingBottom">
+                <PromoCodeForm
+                  handlePromoSubmit={this.props.handlePromoSubmit}
+                  promoCode={this.props.promoCode}
+                  promoCodeInput={this.props.promoCodeInput}
+                  handlePromoChange={this.props.handlePromoChange}
+                />
+              </td>
+            </tr>
 
-          <tr>
-            <td className="table-bottom-border cellPaddingBottom">
-              ENTER PROMOTION CODE OR GIFT CARD
-            </td>
-            <td className="table-bottom-border cellPaddingBottom">
-              <PromoCodeForm
-                handlePromoSubmit={this.props.handlePromoSubmit}
-                promoCode={this.props.promoCode}
-                promoCodeInput={this.props.promoCodeInput}
-                handlePromoChange={this.props.handlePromoChange}
-              />
-            </td>
-          </tr>
+            <tr>
+              <td className="cellPadding">
+                SUB TOTAL
+              </td>
+              <td className="align-right cellPadding">
+                {formatMoney(this.getSubtotal().toFixed(2))}
+              </td>
+            </tr>
 
-          <tr>
-            <td className="cellPadding">
-              SUB TOTAL
-            </td>
-            <td className="align-right cellPadding">
-              ${this.getSubtotal().toFixed(2)}
-            </td>
-          </tr>
+            <tr>
+              <td className="cellPadding">
+                PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
+              </td>
+              <td className="align-right cellPadding">
+                {this.props.promoCode.toUpperCase() === "AJ5" ? formatMoney(2.15) : "0"}
+              </td>
+            </tr>
 
-          <tr>
-            <td className="cellPadding">
-              PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
-            </td>
-            <td className="align-right cellPadding">
-              {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
-            </td>
-          </tr>
-
-          <tr>
-            <td className="table-bottom-border cellPadding">
-              ESTIMATED SHIPPING*<br></br>
+            <tr>
+              <td className="table-bottom-border cellPadding">
+                ESTIMATED SHIPPING*<br></br>
                 You qualify for free shipping because your order is over $50
-            </td>
-            <td className="align-right table-bottom-border cellPadding">
-              FREE
-            </td>
-          </tr>
+              </td>
+              <td className="align-right table-bottom-border cellPadding">
+                FREE
+              </td>
+            </tr>
 
-          <tr>
-            <td className="cellPadding">
-              ESTIMATED TOTAL
-              <p>
-                Tax will be applied during checkout
-              </p>
-            </td>
-            <td className="align-right cellPadding">
-              ${this.getFinalPrice().toFixed(2)}
-            </td>
-          </tr>
+            <tr>
+              <td className="cellPadding">
+                <strong>
+                  ESTIMATED TOTAL
+                </strong>
+                <p>
+                  Tax will be applied during checkout
+                </p>
+              </td>
+              <td className="align-right cellPadding">
+                {formatMoney(this.getFinalPrice().toFixed(2))}
+              </td>
+            </tr>
 
-        </tbody>
-      </table>
-
-      <hr className="thicker-line"></hr>
-
-      <div className="align-right">
-        <hr className="very-thick-line"></hr>
-
-        <span>
-          <u>
-            CONTINUE SHOPPING
-          </u>
-          <button className="primary-button margin-left">CHECKOUT</button>
-        </span>
-
-        <p>
-          <span role="img" aria-label="lock emoji">🔒</span> Secure checkout. Shopping is always safe & secure
-        </p>
+          </tbody>
+        </table>
 
         <hr className="thicker-line"></hr>
 
-      </div>
+        <div className="align-right">
+
+          <hr className="very-thick-line"></hr>
+
+          <span>
+            <u>
+              CONTINUE SHOPPING
+            </u>
+            <button className="primary-button margin-left">CHECKOUT</button>
+          </span>
+
+          <p>
+            <span role="img" aria-label="lock emoji">🔒</span> Secure checkout. Shopping is always safe & secure
+          </p>
+
+          <hr className="thicker-line"></hr>
+
+        </div>
 
       </div>
     );
