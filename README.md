@@ -1,3 +1,19 @@
+Shopping Cart demo app, built with ReactJS
+
+![shopping cart demo](https://media.giphy.com/media/ftexVI05tKPeSaWKi7/giphy.gif)
+
+To view this app:
+
+fork or clone this repo
+
+run `npm install`
+
+run `npm start`
+
+view app in web browser at `localhost:3000`
+
+---
+
 Shopping Cart
 
 Web development Test:

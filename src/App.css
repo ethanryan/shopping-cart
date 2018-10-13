@@ -1,21 +1,30 @@
 .App {
   /* text-align: center; */
-  background-color: pink;
+  /* background-color: pink; */
+  background-color: lightgray;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .ShoppingCartContainer {
-  background-color: lightgrey;
-  border: 3px solid red;
+  /* background-color: lightgray; */
+  background-color: white;
+  padding: 0px 25px 0px 25px;
+  /* border: 3px solid red; */
+  border: 1px solid lightgray;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .ItemList {
-  background-color: azure;
-  border: 3px solid blue;
+  /* background-color: azure; */
+  /* border: 3px solid blue; */
 }
 
 .list-wrapper {
-  background-color: lightyellow;
-  border: 2px solid green;
+  background-color: white;
+  /* background-color: lightyellow; */
+  /* border: 2px solid green; */
+  list-style-type: none;
   padding: 0px;
   display: grid;
   grid-template-columns: 25% 35% 10% 10% 20%;
@@ -23,16 +32,16 @@
 
 
 .PriceSummary-grid {
-  background-color: orange;
+  /* background-color: orange; */
   display: grid;
   grid-template-columns: 30% 70%;
-  padding: 0px;
+  padding: 40px 0px;
 }
 
 
 .price-summary-data-wrapper {
-  background-color: lavender;
-  border: 2px solid blue;
+  /* background-color: lavender; */
+  /* border: 2px solid blue; */
   padding: 0px;
 }
 
@@ -45,7 +54,7 @@
 
 .price-summary-ul li {
   display: inline;
-  border: 2px dotted purple;
+  /* border: 2px dotted purple; */
 }
 
 
@@ -55,26 +64,8 @@
 
 .ItemList-ul li {
   display: inline;
-  border: 2px dotted green;
+  /* border: 2px dotted green; */
 }
-/*
-.PriceSummary-ul {
-  padding: 0px;
-}
-
-.PriceSummary-ul li {
-  display: inline;
-  border: 2px dotted green;
-}
-
-.PriceSummary-ul {
-  padding: 0px;
-}
-
-.PriceSummary-ul li {
-  display: inline;
-  border: 2px dotted green;
-} */
 
 .item-image {
   max-height: 200px;
@@ -90,11 +81,6 @@ button.unstyled-button {
     cursor: pointer;
     outline: inherit;
 }
-
-
-
-
-
 
 
 .modal {
@@ -124,7 +110,7 @@ button.unstyled-button {
 }
 
 /* input[type=submit]#edit-button { */
-#edit-button {
+.primary-button {
   background-color: #2185d0;
   color: #fff;
   text-shadow: none;
@@ -146,4 +132,84 @@ button.unstyled-button {
   display: grid;
   grid-template-columns: 50% 50%;
   /* margin: 60px; */
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.input-field-compact {
+  width: 25px;
+}
+
+.colorRadioButtons {
+  padding: 15px;
+  /* margin: 10px; */
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.thicker-line {
+  color: lightgray;
+  background-color: lightgray;
+  border: lightgray;
+  height: 3px
+}
+
+.very-thick-line {
+  color: lightgray;
+  background-color: lightgray;
+  border: lightgray;
+  height: 9px
+}
+
+.pricing-table {
+  border-collapse: collapse;
+}
+
+.table-bottom-border {
+  border-bottom: 2px solid lightgray;
+}
+
+.padding-left {
+  padding-left: 10%;
+}
+
+.margin-left {
+  margin-left: 10%;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cellPaddingBottom {
+  padding-bottom: 10px;
+}
+
+.cellPadding {
+  padding: 10px 0px 10px 0px;
+}
+
+.dollarSign {
+  vertical-align: super;
+}
+
+.bigMoney {
+  font-size: 26px;
+  font-weight: bold
 }

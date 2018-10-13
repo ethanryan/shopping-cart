@@ -3,16 +3,15 @@ import React, { Component } from 'react';
 import ContactInfo from './ContactInfo';
 import PromoCodeForm from './PromoCodeForm';
 
+import formatMoney from '../helpers/formatMoney';
+
 class PriceSummary extends Component {
 
   getSubtotal() {
-    //for each element in items, multiply the quantity and price
     let filteredArray = this.props.items.map(object => {
       return object.quantity * object.price
     })
-    // console.warn('getSubtotal - filteredArray is: ', filteredArray)
     var result = filteredArray.reduce((a, b) => a + b, 0); //sum up every number to get the total
-    // console.log('getSubtotal - result is: ', result)
     return result
   }
 
@@ -35,64 +34,95 @@ class PriceSummary extends Component {
   }
 
   render() {
-    // console.log('PriceSummary this.props is: ', this.props)
     return (
       <div className="PriceSummary-grid">
 
-      <ContactInfo
-      />
+        <ContactInfo
+        />
 
-      <div className="price-summary-data-wrapper">
-        <ul className="price-summary-ul">
+        <table className="pricing-table">
 
-          <li>
-            ENTER PROMOTION CODE OR GIFT CARD
-          </li>
-          <li>
-            <PromoCodeForm
-              handlePromoSubmit={this.props.handlePromoSubmit}
-              promoCode={this.props.promoCode}
-              promoCodeInput={this.props.promoCodeInput}
-              handlePromoChange={this.props.handlePromoChange}
-            />
-          </li>
+          <tbody>
 
-          <li>
-            SUB TOTAL
-          </li>
-          <li>
-            ${this.getSubtotal().toFixed(2)}
-          </li>
+            <tr>
+              <td className="table-bottom-border cellPaddingBottom">
+                ENTER PROMOTION CODE OR GIFT CARD
+              </td>
+              <td className="table-bottom-border cellPaddingBottom">
+                <PromoCodeForm
+                  handlePromoSubmit={this.props.handlePromoSubmit}
+                  promoCode={this.props.promoCode}
+                  promoCodeInput={this.props.promoCodeInput}
+                  handlePromoChange={this.props.handlePromoChange}
+                />
+              </td>
+            </tr>
 
-          <li>
-            PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
-          </li>
-          <li>
-            {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
-          </li>
+            <tr>
+              <td className="cellPadding">
+                SUB TOTAL
+              </td>
+              <td className="align-right cellPadding">
+                {formatMoney(this.getSubtotal().toFixed(2))}
+              </td>
+            </tr>
 
-          <li>
-            ESTIMATED SHIPPING*
-            <p>
-              You qualify for free shipping because your order is over $50
-            </p>
-          </li>
-          <li>
-            FREE
-          </li>
+            <tr>
+              <td className="cellPadding">
+                PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
+              </td>
+              <td className="align-right cellPadding">
+                {this.props.promoCode.toUpperCase() === "AJ5" ? formatMoney(2.15) : "0"}
+              </td>
+            </tr>
 
-          <li>
-            ESTIMATED TOTAL
-            <p>
-              Tax will be applied during checkout
-            </p>
-          </li>
-          <li>
-            ${this.getFinalPrice().toFixed(2)}
-          </li>
+            <tr>
+              <td className="table-bottom-border cellPadding">
+                ESTIMATED SHIPPING*<br></br>
+                You qualify for free shipping because your order is over $50
+              </td>
+              <td className="align-right table-bottom-border cellPadding">
+                FREE
+              </td>
+            </tr>
 
-        </ul>
-      </div>
+            <tr>
+              <td className="cellPadding">
+                <strong>
+                  ESTIMATED TOTAL
+                </strong>
+                <p>
+                  Tax will be applied during checkout
+                </p>
+              </td>
+              <td className="align-right cellPadding">
+                {formatMoney(this.getFinalPrice().toFixed(2))}
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <hr className="thicker-line"></hr>
+
+        <div className="align-right">
+
+          <hr className="very-thick-line"></hr>
+
+          <span>
+            <u>
+              CONTINUE SHOPPING
+            </u>
+            <button className="primary-button margin-left">CHECKOUT</button>
+          </span>
+
+          <p>
+            <span role="img" aria-label="lock emoji">🔒</span> Secure checkout. Shopping is always safe & secure
+          </p>
+
+          <hr className="thicker-line"></hr>
+
+        </div>
 
       </div>
     );

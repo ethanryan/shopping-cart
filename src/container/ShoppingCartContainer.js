@@ -41,7 +41,7 @@ class ShoppingCartContainer extends Component {
           colorSelected: "pink",
           sizes: [],
           sizeSelected: "medium",
-          quantity: 2,
+          quantity: 1,
           priceOriginal: '',
           price: 17.00,
           image: pinkShirt
@@ -49,7 +49,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "FLOWER PATTERN SHIRT",
           styleNumber: "MS13KT1906",
-          colors: ["beige", "blue", "fuchsia", "indigo", "marigold"],
+          colors: ["beige", "blue", "fuchsia", "indigo", "gold"],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "small",
@@ -61,7 +61,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "CHECK PATTERN TSHIRT",
           styleNumber: "MS13KT1906",
-          colors: ["forrest green", "red", "navy blue"],
+          colors: ["darkgreen", "red", "salmon", "turquoise"],
           colorSelected: "red",
           sizes: [],
           sizeSelected: "medium",
@@ -104,7 +104,7 @@ class ShoppingCartContainer extends Component {
   }
 
   handleSubmit(event) {
-    console.log('handleSubmit called!!!!!!!!!')
+    // console.log('handleSubmit called')
     var itemsArray = [...this.state.items]; // make a separate copy of the itemsArray
     let index = this.state.editingIndex;
     const item = this.state.items[index];
@@ -132,9 +132,8 @@ class ShoppingCartContainer extends Component {
   }
 
   toggleEditMode(event) {
-    console.log('toggleEditMode clicked.........')
+    // console.log('toggleEditMode clicked...')
     var index = event.target.value;
-    console.log('toggleEditMode, index is: ', index)
     this.setState(prevState => ({
       editMode: !prevState.editMode,
       editingIndex: index
@@ -142,8 +141,7 @@ class ShoppingCartContainer extends Component {
   }
 
   render() {
-    console.warn('ShoppingCartContainer, this.state is: ', this.state)
-    // console.log('ShoppingCartContainer, this.state.items is: ', this.state.items)
+    console.log('ShoppingCartContainer, this.state is: ', this.state)
     return (
       <div className="ShoppingCartContainer">
 
@@ -159,6 +157,7 @@ class ShoppingCartContainer extends Component {
                 item={this.state.items[this.state.editingIndex]}
                 editingIndex={this.state.editingIndex}
                 handleInputChange={this.handleInputChange}
+                colorSelected={this.state.colorSelected}
               />
               :
               null
@@ -169,11 +168,15 @@ class ShoppingCartContainer extends Component {
           If the cart is completely empty then we shall again add back the products for you
         </p>
 
+        <hr></hr>
+
         <ItemList
           handleDeleteItem={this.handleDeleteItem}
           items={this.state.items}
           toggleEditMode={this.toggleEditMode}
         />
+
+        <hr className="very-thick-line"></hr>
 
         <PriceSummary
           items={this.state.items}

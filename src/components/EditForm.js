@@ -2,48 +2,55 @@ import React, { Component } from 'react';
 
 class EditForm extends Component {
   render() {
-    console.log('EditForm this.props is: ', this.props)
+    let displayColor = this.props.colorSelected ? this.props.colorSelected : this.props.item.colorSelected
     return (
-      <div className="EditForm">
+      <div className="EditForm center-text">
 
         <div id="column-1">
         <form onSubmit={this.props.handleSubmit}>
-          <p>
-            {this.props.item.name}
-          </p>
 
-          <p>
+          <hr></hr>
+
+          <h3>
+            {this.props.item.name}
+          </h3>
+
+          <h1>
             ${this.props.item.price.toFixed(2)}
-          </p>
+          </h1>
 
           <p>
             {this.props.item.styleNumber}
           </p>
 
-          <label>
-            Color:
+          <div>
             {
               this.props.item.colors.map( (color, index) => {
                 return (
-                  <span key={index}>
-                    <label>
+                  <span key={index} style={{border: `1px solid black`, margin: `10px`, color: `${color}`, backgroundColor: `${color}`}}>
+                    <label className="colorRadioButtons">
                       <input type="radio"
+                        className="hidden"
                         onChange={this.props.handleInputChange}
                         name="colorSelected"
                         value={color}
                         defaultChecked={(this.props.item.colorSelected === color) ? true : false}
                       />
-                      {color}
+                      {/* {color} */}
                     </label>
                   </span>
-                )
-              })
-            }
-          </label>
+                )})
+              }
+          <p>
+            Color: {displayColor} <span className="dot"
+              style={{
+                color: `${displayColor}`,
+                backgroundColor: `${displayColor}`
+              }}></span>
+          </p>
+        </div>
 
-          <br></br>
-
-          <label>
+          <p>
             Size:
             <select name="sizeSelected"
               defaultValue={this.props.item.sizeSelected}
@@ -53,38 +60,34 @@ class EditForm extends Component {
               <option value="large">large</option>
               <option value="extra-large">extra-large</option>
             </select>
-          </label>
 
-          <br></br>
-
-          <label>
+            <span className="padding-left">
             Quantity:
             <input type="number"
+              className="align-right input-field-compact"
               name="quantity"
               min="1"
               defaultValue={this.props.item.quantity}
               onChange={this.props.handleInputChange}
             />
-          </label>
+          </span>
+          </p>
 
           <br></br>
 
-          <input type="submit" value="EDIT" id="edit-button"/>
-          <u>
-            Check product details
-          </u>
+          <p>
+            <input type="submit" value="EDIT" className="primary-button"/>
+            <br></br>
+            <u>
+              Check product details
+            </u>
+          </p>
         </form>
       </div>
 
-        <div id="column-2">
-          <p>
-            this should be in column 2....
-          </p>
-          <p>
-            form is in column 1, image will go here
-          </p>
+        <div id="column-2" className="center">
 
-          <img src={this.props.item.image}></img>
+          <img src={this.props.item.image} alt={`${this.props.item.name}`}></img>
 
         </div>
 

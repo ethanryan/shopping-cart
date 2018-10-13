@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 
+import formatMoney from '../helpers/formatMoney';
+import convertSize from '../helpers/convertSize';
+
 class EachItem extends Component {
+
   render() {
     return (
       <div className="list-wrapper">
 
-        <li>
-          image:
-          <img src={this.props.item.image} alt={`${this.props.item.name}`} className="item-image"></img>
+        <li className="center">
+          <img
+            src={this.props.item.image}
+            alt={`${this.props.item.name}`}
+            className="item-image"></img>
         </li>
 
         <li>
@@ -25,18 +31,35 @@ class EachItem extends Component {
 
           <br></br>
 
-          <button className="unstyled-button" value={this.props.index} onClick={this.props.toggleEditMode}>EDIT</button> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
+          <button className="unstyled-button"
+            value={this.props.index}
+            onClick={this.props.toggleEditMode}>
+            EDIT
+          </button>
+          {" "}|{" "}
+          <button
+            className="unstyled-button"
+            value={this.props.index}
+            onClick={this.props.handleDeleteItem}>
+            X REMOVE
+          </button>
+           {" "}|{" "}
+           <span>
+             SAVE FOR LATER
+           </span>
         </li>
 
-        <li>
-          {this.props.item.sizeSelected}
+        <li className="center">
+          <strong>
+            {convertSize(this.props.item.sizeSelected)}
+          </strong>
         </li>
 
-        <li>
+        <li className="center">
           {this.props.item.quantity}
         </li>
 
-        <li>
+        <li className="align-right">
           <div>
             {
               (this.props.item.priceOriginal !== '') ?
@@ -46,7 +69,7 @@ class EachItem extends Component {
               : null
             }
           </div>
-          ${this.props.item.price}
+          {formatMoney(this.props.item.price)}
         </li>
 
       </div>
