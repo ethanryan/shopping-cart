@@ -114,7 +114,7 @@ class PriceSummary extends Component {
         </span>
 
         <p>
-          🔒 Secure checkout. Shopping is always safe & secure
+          <span role="img" aria-label="lock emoji">🔒</span> Secure checkout. Shopping is always safe & secure
         </p>
 
         <hr className="thicker-line"></hr>
