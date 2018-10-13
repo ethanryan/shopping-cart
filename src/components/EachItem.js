@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
 
 import formatMoney from '../helpers/formatMoney';
+import convertSize from '../helpers/convertSize';
 
 class EachItem extends Component {
-
-  convertSize(size) {
-    if (size === "small") {
-      return "S"
-    }
-    if (size === "medium") {
-      return "M"
-    }
-    if (size === "large") {
-      return "L"
-    }
-    if (size === "extra-large") {
-      return "XL"
-    }
-  }
 
   render() {
     return (
@@ -65,7 +51,7 @@ class EachItem extends Component {
 
         <li className="center">
           <strong>
-            {this.convertSize(this.props.item.sizeSelected)}
+            {convertSize(this.props.item.sizeSelected)}
           </strong>
         </li>
 
