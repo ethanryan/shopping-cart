@@ -178,6 +178,8 @@ class ShoppingCartContainer extends Component {
           toggleEditMode={this.toggleEditMode}
         />
 
+        <hr className="very-thick-line"></hr>
+
         <PriceSummary
           items={this.state.items}
           promoCode={this.state.promoCode}

@@ -31,7 +31,9 @@ class ItemList extends Component {
                   handleDeleteItem={this.props.handleDeleteItem}
                   toggleEditMode={this.props.toggleEditMode}
                 />
-                <hr></hr>
+                {
+                  (index === this.props.items.length-1) ? null : <hr></hr>
+                }
               </div>
             )
           }

@@ -161,3 +161,10 @@ button.unstyled-button {
   border: lightgray;
   height: 3px
 }
+
+.very-thick-line {
+  color: lightgray;
+  background-color: lightgray;
+  border: lightgray;
+  height: 9px
+}
