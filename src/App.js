@@ -9,10 +9,6 @@ class App extends Component {
     return (
       <div className="App">
 
-        <p>
-          hello world
-        </p>
-
         <ShoppingCartContainer
         />
 

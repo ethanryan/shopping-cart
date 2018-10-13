@@ -18,7 +18,7 @@ class ItemList extends Component {
             <li className="align-right">PRICE</li>
           </ul>
 
-          <hr></hr>
+          <hr className="thicker-line"></hr>
 
           <ul className="ItemList-ul">
             {
