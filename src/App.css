@@ -77,7 +77,8 @@
 } */
 
 .item-image {
-  height: 200px;
+  max-height: 200px;
+  /* max-height: 90%; */
 }
 
 button.unstyled-button {
@@ -120,4 +121,29 @@ button.unstyled-button {
 
 .display-none {
   display: none;
+}
+
+/* input[type=submit]#edit-button { */
+#edit-button {
+  background-color: #2185d0;
+  color: #fff;
+  text-shadow: none;
+  background-image: none;
+  font-size: 1rem;
+  min-height: 1em;
+  margin: 0 .25em 0 0;
+  padding: .78571429em 1.5em .78571429em;
+  font-weight: 700;
+  line-height: 1em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: .28571429rem;
+}
+
+.EditForm {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* margin: 60px; */
 }

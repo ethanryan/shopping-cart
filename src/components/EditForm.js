@@ -4,34 +4,44 @@ class EditForm extends Component {
   render() {
     console.log('EditForm this.props is: ', this.props)
     return (
-      <div>
-        <form onSubmit={this.props.handleSubmit}>
-          <label>
-            updating this.state.items[editingIndex], aka: {this.props.item.name}
-          </label>
+      <div className="EditForm">
 
-      <br></br>
+        <div id="column-1">
+        <form onSubmit={this.props.handleSubmit}>
+          <p>
+            {this.props.item.name}
+          </p>
+
+          <p>
+            ${this.props.item.price.toFixed(2)}
+          </p>
+
+          <p>
+            {this.props.item.styleNumber}
+          </p>
 
           <label>
             Color:
             {
-              this.props.item.colors.map(color => {
+              this.props.item.colors.map( (color, index) => {
                 return (
-                  <span>
-                    <input type="radio"
-                      onChange={this.props.handleInputChange}
-                      name="colorSelected"
-                      value={color}
-                      defaultChecked={(this.props.item.colorSelected === color) ? true : false}
-                    />
-                    <label>{color}</label>
+                  <span key={index}>
+                    <label>
+                      <input type="radio"
+                        onChange={this.props.handleInputChange}
+                        name="colorSelected"
+                        value={color}
+                        defaultChecked={(this.props.item.colorSelected === color) ? true : false}
+                      />
+                      {color}
+                    </label>
                   </span>
                 )
               })
             }
           </label>
 
-      <br></br>
+          <br></br>
 
           <label>
             Size:
@@ -45,7 +55,7 @@ class EditForm extends Component {
             </select>
           </label>
 
-      <br></br>
+          <br></br>
 
           <label>
             Quantity:
@@ -57,10 +67,27 @@ class EditForm extends Component {
             />
           </label>
 
-      <br></br>
+          <br></br>
 
-          <input type="submit" value="EDIT" />
+          <input type="submit" value="EDIT" id="edit-button"/>
+          <u>
+            Check product details
+          </u>
         </form>
+      </div>
+
+        <div id="column-2">
+          <p>
+            this should be in column 2....
+          </p>
+          <p>
+            form is in column 1, image will go here
+          </p>
+
+          <img src={this.props.item.image}></img>
+
+        </div>
+
       </div>
     );
   }
