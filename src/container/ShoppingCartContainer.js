@@ -25,7 +25,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "COTTON TSHIRT",
           styleNumber: "MS13KT1906",
-          colors: [],
+          colors: ["red", "white", "blue"],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "small",
