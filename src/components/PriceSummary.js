@@ -48,7 +48,7 @@ class PriceSummary extends Component {
           <li>
             ENTER PROMOTION CODE OR GIFT CARD
           </li>
-          <li>
+          <li className="align-right">
             <PromoCodeForm
               handlePromoSubmit={this.props.handlePromoSubmit}
               promoCode={this.props.promoCode}
@@ -60,14 +60,14 @@ class PriceSummary extends Component {
           <li>
             SUB TOTAL
           </li>
-          <li>
+          <li className="align-right">
             ${this.getSubtotal().toFixed(2)}
           </li>
 
           <li>
             PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
           </li>
-          <li>
+          <li className="align-right">
             {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
           </li>
 
@@ -77,7 +77,7 @@ class PriceSummary extends Component {
               You qualify for free shipping because your order is over $50
             </p>
           </li>
-          <li>
+          <li className="align-right">
             FREE
           </li>
 
@@ -87,7 +87,7 @@ class PriceSummary extends Component {
               Tax will be applied during checkout
             </p>
           </li>
-          <li>
+          <li className="align-right">
             ${this.getFinalPrice().toFixed(2)}
           </li>
 

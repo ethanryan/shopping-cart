@@ -32,16 +32,16 @@
 
 
 .PriceSummary-grid {
-  background-color: orange;
+  /* background-color: orange; */
   display: grid;
   grid-template-columns: 30% 70%;
-  padding: 0px;
+  padding: 40px 0px;
 }
 
 
 .price-summary-data-wrapper {
-  background-color: lavender;
-  border: 2px solid blue;
+  /* background-color: lavender; */
+  /* border: 2px solid blue; */
   padding: 0px;
 }
 
@@ -54,7 +54,7 @@
 
 .price-summary-ul li {
   display: inline;
-  border: 2px dotted purple;
+  /* border: 2px dotted purple; */
 }
 
 
