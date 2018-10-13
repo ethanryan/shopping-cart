@@ -1,4 +1,6 @@
-Shopping Cart demo app, built in ReactJS
+Shopping Cart demo app, built with ReactJS
+
+![shopping cart demo](https://media.giphy.com/media/ftexVI05tKPeSaWKi7/giphy.gif)
 
 To view this app:
 
