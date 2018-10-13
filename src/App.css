@@ -168,3 +168,15 @@ button.unstyled-button {
   border: lightgray;
   height: 9px
 }
+
+.pricing-table {
+  border-collapse: collapse;
+}
+
+td.pricing-table {
+  padding-bottom: 10em;
+}
+
+.table-bottom-border {
+  border-bottom: 2px solid lightgray;
+}

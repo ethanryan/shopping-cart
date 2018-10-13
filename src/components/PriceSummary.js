@@ -42,7 +42,73 @@ class PriceSummary extends Component {
       <ContactInfo
       />
 
-      <div className="price-summary-data-wrapper">
+      <table className="pricing-table">
+
+        <thead></thead>
+
+        <tbody>
+
+          {/* <tr>
+            <th>Data 1</th>
+            <th>Data 2</th>
+          </tr>
+
+          <tr>
+            <td>Calcutta</td>
+            <td>Orange</td>
+          </tr>
+
+          <tr>
+            <td>Robots</td>
+            <td>Jazz</td>
+          </tr> */}
+
+          <tr>
+            <td className="table-bottom-border">
+              ENTER PROMOTION CODE OR GIFT CARD
+            </td>
+            <td className="table-bottom-border">
+              <PromoCodeForm
+                handlePromoSubmit={this.props.handlePromoSubmit}
+                promoCode={this.props.promoCode}
+                promoCodeInput={this.props.promoCodeInput}
+                handlePromoChange={this.props.handlePromoChange}
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              SUB TOTAL
+            </td>
+            <td className="align-right">
+              ${this.getSubtotal().toFixed(2)}
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              PROMOTION CODE {this.props.promoCode.toUpperCase()} APPLIED
+            </td>
+            <td className="align-right">
+              {this.props.promoCode.toUpperCase() === "AJ5" ? "$2.15" : "0"}
+            </td>
+          </tr>
+
+          <tr>
+            <td className="table-bottom-border">
+              ESTIMATED SHIPPING*<br></br>
+                You qualify for free shipping because your order is over $50
+            </td>
+            <td className="align-right table-bottom-border">
+              FREE
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      {/* <div className="price-summary-data-wrapper">
         <ul className="price-summary-ul">
 
           <li>
@@ -92,7 +158,7 @@ class PriceSummary extends Component {
           </li>
 
         </ul>
-      </div>
+      </div> */}
 
       </div>
     );
