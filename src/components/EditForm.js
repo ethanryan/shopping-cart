@@ -8,19 +8,22 @@ class EditForm extends Component {
 
         <div id="column-1">
         <form onSubmit={this.props.handleSubmit}>
-          <p>
-            {this.props.item.name}
-          </p>
 
-          <p>
+          <hr></hr>
+
+          <h3>
+            {this.props.item.name}
+          </h3>
+
+          <h1>
             ${this.props.item.price.toFixed(2)}
-          </p>
+          </h1>
 
           <p>
             {this.props.item.styleNumber}
           </p>
 
-          <label>
+          <p>
             Color:
             {
               this.props.item.colors.map( (color, index) => {
@@ -39,11 +42,9 @@ class EditForm extends Component {
                 )
               })
             }
-          </label>
+          </p>
 
-          <br></br>
-
-          <label>
+          <p>
             Size:
             <select name="sizeSelected"
               defaultValue={this.props.item.sizeSelected}
@@ -53,11 +54,9 @@ class EditForm extends Component {
               <option value="large">large</option>
               <option value="extra-large">extra-large</option>
             </select>
-          </label>
+          </p>
 
-          <br></br>
-
-          <label>
+          <p>
             Quantity:
             <input type="number"
               name="quantity"
@@ -65,24 +64,18 @@ class EditForm extends Component {
               defaultValue={this.props.item.quantity}
               onChange={this.props.handleInputChange}
             />
-          </label>
+          </p>
 
-          <br></br>
-
-          <input type="submit" value="EDIT" id="edit-button"/>
-          <u>
-            Check product details
-          </u>
+          <p>
+            <input type="submit" value="EDIT" id="edit-button"/>
+            <u>
+              Check product details
+            </u>
+          </p>
         </form>
       </div>
 
-        <div id="column-2">
-          <p>
-            this should be in column 2....
-          </p>
-          <p>
-            form is in column 1, image will go here
-          </p>
+        <div id="column-2" className="center">
 
           <img src={this.props.item.image} alt={`${this.props.item.name}`}></img>
 

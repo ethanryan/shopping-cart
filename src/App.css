@@ -147,3 +147,7 @@ button.unstyled-button {
   grid-template-columns: 50% 50%;
   /* margin: 60px; */
 }
+
+.center {
+  margin: 0 auto;
+}
