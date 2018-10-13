@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 
+
 class EachItem extends Component {
+
+  convertSize(size) {
+    if (size === "small") {
+      return "S"
+    }
+    if (size === "medium") {
+      return "M"
+    }
+    if (size === "large") {
+      return "L"
+    }
+    if (size === "extra-large") {
+      return "XL"
+    }
+  }
+
   render() {
     return (
       <div className="list-wrapper">
 
-        <li>
-          image:
+        <li className="center">
           <img src={this.props.item.image} alt={`${this.props.item.name}`} className="item-image"></img>
         </li>
 
@@ -28,15 +44,15 @@ class EachItem extends Component {
           <button className="unstyled-button" value={this.props.index} onClick={this.props.toggleEditMode}>EDIT</button> | <button className="unstyled-button" value={this.props.index} onClick={this.props.handleDeleteItem}>X REMOVE</button> | <span>SAVE FOR LATER</span>
         </li>
 
-        <li>
-          {this.props.item.sizeSelected}
+        <li className="center">
+          {this.convertSize(this.props.item.sizeSelected)}
         </li>
 
-        <li>
+        <li className="center">
           {this.props.item.quantity}
         </li>
 
-        <li>
+        <li className="align-right">
           <div>
             {
               (this.props.item.priceOriginal !== '') ?
