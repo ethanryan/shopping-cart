@@ -145,3 +145,12 @@ button.unstyled-button {
 .align-right {
   text-align: right;
 }
+
+.colorRadioButtons {
+  padding: 15px;
+  /* margin: 10px; */
+}
+
+.hidden {
+  visibility: hidden;
+}

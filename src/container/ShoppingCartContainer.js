@@ -49,7 +49,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "FLOWER PATTERN SHIRT",
           styleNumber: "MS13KT1906",
-          colors: ["beige", "blue", "fuchsia", "indigo", "marigold"],
+          colors: ["beige", "blue", "fuchsia", "indigo", "gold"],
           colorSelected: "blue",
           sizes: [],
           sizeSelected: "small",
@@ -61,7 +61,7 @@ class ShoppingCartContainer extends Component {
         {
           name: "CHECK PATTERN TSHIRT",
           styleNumber: "MS13KT1906",
-          colors: ["forrest green", "red", "navy blue"],
+          colors: ["darkgreen", "red", "salmon", "turquoise"],
           colorSelected: "red",
           sizes: [],
           sizeSelected: "medium",
@@ -159,6 +159,7 @@ class ShoppingCartContainer extends Component {
                 item={this.state.items[this.state.editingIndex]}
                 editingIndex={this.state.editingIndex}
                 handleInputChange={this.handleInputChange}
+                colorSelected={this.state.colorSelected}
               />
               :
               null

@@ -23,7 +23,7 @@ class ItemList extends Component {
           <ul className="ItemList-ul">
             {
               this.props.items.map( (item, index) =>
-              <div>
+              <div key={index}>
                 <EachItem
                   key={index}
                   index={index}

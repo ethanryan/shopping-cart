@@ -4,7 +4,7 @@ class EditForm extends Component {
   render() {
     console.log('EditForm this.props is: ', this.props)
     return (
-      <div className="EditForm">
+      <div className="EditForm center-text">
 
         <div id="column-1">
         <form onSubmit={this.props.handleSubmit}>
@@ -23,26 +23,29 @@ class EditForm extends Component {
             {this.props.item.styleNumber}
           </p>
 
-          <p>
-            Color:
+          <div>
             {
               this.props.item.colors.map( (color, index) => {
                 return (
-                  <span key={index}>
-                    <label>
+                  <span key={index} style={{border: `1px solid black`, margin: `10px`, color: `${color}`, backgroundColor: `${color}`}}>
+                    <label className="colorRadioButtons">
                       <input type="radio"
+                        className="hidden"
                         onChange={this.props.handleInputChange}
                         name="colorSelected"
                         value={color}
                         defaultChecked={(this.props.item.colorSelected === color) ? true : false}
                       />
-                      {color}
+                      {/* {color} */}
                     </label>
                   </span>
                 )
               })
             }
+          <p>
+            Color: {this.props.colorSelected ? this.props.colorSelected : this.props.item.colorSelected}
           </p>
+        </div>
 
           <p>
             Size:
@@ -54,9 +57,8 @@ class EditForm extends Component {
               <option value="large">large</option>
               <option value="extra-large">extra-large</option>
             </select>
-          </p>
 
-          <p>
+            <span style={{paddingLeft: `10%`}}>
             Quantity:
             <input type="number"
               name="quantity"
@@ -64,10 +66,14 @@ class EditForm extends Component {
               defaultValue={this.props.item.quantity}
               onChange={this.props.handleInputChange}
             />
+          </span>
           </p>
+
+          <br></br>
 
           <p>
             <input type="submit" value="EDIT" id="edit-button"/>
+            <br></br>
             <u>
               Check product details
             </u>
