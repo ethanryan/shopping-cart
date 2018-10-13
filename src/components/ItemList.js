@@ -23,15 +23,18 @@ class ItemList extends Component {
           <ul className="ItemList-ul">
             {
               this.props.items.map( (item, index) =>
-              <EachItem
-                key={index}
-                index={index}
-                item={item}
-                handleDeleteItem={this.props.handleDeleteItem}
-                toggleEditMode={this.props.toggleEditMode}
-              />
-              )
-            }
+              <div>
+                <EachItem
+                  key={index}
+                  index={index}
+                  item={item}
+                  handleDeleteItem={this.props.handleDeleteItem}
+                  toggleEditMode={this.props.toggleEditMode}
+                />
+                <hr></hr>
+              </div>
+            )
+          }
           </ul>
         </div>
       </div>
