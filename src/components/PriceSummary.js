@@ -3,43 +3,39 @@ import React, { Component } from 'react';
 import ContactInfo from './ContactInfo';
 import PromoCodeForm from './PromoCodeForm';
 
-
-
 class PriceSummary extends Component {
-
-  // componentDidUpdate() {
-  //   this.props.getSubtotal()
-  // }
 
   getSubtotal() {
     //for each element in items, multiply the quantity and price
     let filteredArray = this.props.items.map(object => {
       return object.quantity * object.price
     })
-    console.warn('getSubtotal - filteredArray is: ', filteredArray)
-    var result = filteredArray.reduce((a, b) => a + b, 0);
-    //finally, sum up every number to get the total
-    console.log('getSubtotal - result is: ', result)
-    // this.setState({subTotal: result})
+    // console.warn('getSubtotal - filteredArray is: ', filteredArray)
+    var result = filteredArray.reduce((a, b) => a + b, 0); //sum up every number to get the total
+    // console.log('getSubtotal - result is: ', result)
     return result
   }
 
-  getFinalPrice() {
-    let subtotal = this.getSubtotal()
-    let promoCode = this.props.promoCode //need to get this from container...
+  getPromoCode() {
+    let promoCode = this.props.promoCode
     if (promoCode.toUpperCase() === "AJ5") {
       promoCode = 2.15
     } else {
       promoCode = 0
     }
+    return promoCode
+  }
+
+  getFinalPrice() {
+    let subtotal = this.getSubtotal()
+    let promoCode = this.getPromoCode()
     let shippingCost = 0 //shipping is free in demo...
     let total = (subtotal - promoCode) + shippingCost
     return total
   }
 
   render() {
-    console.log('PriceSummary this.props is: ', this.props)
-    // this.props.getSubtotal()
+    // console.log('PriceSummary this.props is: ', this.props)
     return (
       <div className="PriceSummary-grid">
 
@@ -53,7 +49,6 @@ class PriceSummary extends Component {
             ENTER PROMOTION CODE OR GIFT CARD
           </li>
           <li>
-            {/* {this.props.promoCode.toUpperCase()} -- AJ5 (input field) APPLY (button) */}
             <PromoCodeForm
               handlePromoSubmit={this.props.handlePromoSubmit}
               promoCode={this.props.promoCode}

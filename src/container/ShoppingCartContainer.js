@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 import ItemList from '../components/ItemList';
 import PriceSummary from '../components/PriceSummary';
 import EditForm from '../components/EditForm';
-import PromoCodeForm from '../components/PromoCodeForm';
-
 import Modal from '../components/Modal';
 
 import cottonTshirt from '../components/assets/cotton-tshirt.jpg'
@@ -143,8 +141,8 @@ class ShoppingCartContainer extends Component {
   }
 
   render() {
-    console.log('ShoppingCartContainer, this.state is: ', this.state)
-    console.log('ShoppingCartContainer, this.state.items is: ', this.state.items)
+    console.warn('ShoppingCartContainer, this.state is: ', this.state)
+    // console.log('ShoppingCartContainer, this.state.items is: ', this.state.items)
     return (
       <div className="ShoppingCartContainer">
 
@@ -175,12 +173,6 @@ class ShoppingCartContainer extends Component {
           items={this.state.items}
           toggleEditMode={this.toggleEditMode}
         />
-
-        {/* <PromoCodeForm
-          handlePromoSubmit={this.handlePromoSubmit}
-          promoCodeInput={this.state.promoCodeInput}
-          handlePromoChange={this.handlePromoChange}
-        /> */}
 
         <PriceSummary
           items={this.state.items}

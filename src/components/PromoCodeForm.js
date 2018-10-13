@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class PromoCodeForm extends Component {
   render() {
-    console.log('PromoCodeForm this.props is: ', this.props)
+    // console.log('PromoCodeForm this.props is: ', this.props)
     return (
       <div id="PromoCodeForm">
         <form onSubmit={this.props.handlePromoSubmit}>

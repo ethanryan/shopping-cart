@@ -4,7 +4,7 @@ import EachItem from './EachItem';
 
 class ItemList extends Component {
   render() {
-    console.log('ItemList this.props is: ', this.props)
+    // console.log('ItemList this.props is: ', this.props)
     return (
       <div>
 
