@@ -24,6 +24,7 @@
   background-color: white;
   /* background-color: lightyellow; */
   /* border: 2px solid green; */
+  list-style-type: none;
   padding: 0px;
   display: grid;
   grid-template-columns: 25% 35% 10% 10% 20%;
@@ -82,11 +83,6 @@ button.unstyled-button {
 }
 
 
-
-
-
-
-
 .modal {
   position: fixed;
   top: 0;
@@ -140,6 +136,10 @@ button.unstyled-button {
 
 .center {
   margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .align-right {

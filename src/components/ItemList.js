@@ -8,19 +8,17 @@ class ItemList extends Component {
     return (
       <div>
 
-        <p>
-          this is the ItemList
-        </p>
-
         <div className="ItemList">
 
-          <div className="list-wrapper" id="list-header">
+          <ul className="list-wrapper center-text" id="list-header">
             <li>{this.props.items.length} ITEMS</li>
             <li></li>
             <li>SIZE</li>
             <li>QTY</li>
-            <li>PRICE</li>
-          </div>
+            <li className="align-right">PRICE</li>
+          </ul>
+
+          <hr></hr>
 
           <ul className="ItemList-ul">
             {

@@ -169,6 +169,8 @@ class ShoppingCartContainer extends Component {
           If the cart is completely empty then we shall again add back the products for you
         </p>
 
+        <hr></hr>
+
         <ItemList
           handleDeleteItem={this.handleDeleteItem}
           items={this.state.items}
